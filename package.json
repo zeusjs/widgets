@@ -1,0 +1,24 @@
+{
+  "name": "zeus-widgets",
+  "version": "0.0.1",
+  "description": "A set of input widgets and other UI components built using AngularJS",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeusjs/widgets.git"
+  },
+  "keywords": [
+    "widgets",
+    "AngularJS",
+    "visualizations"
+  ],
+  "author": "Zeus Core Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeusjs/widgets/issues"
+  },
+  "homepage": "https://github.com/zeusjs/widgets"
+}
