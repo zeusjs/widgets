@@ -37,6 +37,7 @@ module.exports = function ( grunt ) {
                         '.tmp',
                         'dist/*',
                         'docs',
+                        'publish_docs',
                         '!dist/.git*'
                     ]
                 } ]
