@@ -19,8 +19,8 @@
 .btn-async-spinner
 {
     margin: 0 auto;
-    margin-right: 10px;
-    width: 30px;
+    margin-right: 5px;
+    width: 50px;
     text-align: center;
     display: none;
 
@@ -31,7 +31,7 @@
         border: 1px solid;
         border-radius: 100%;
         display: inline-block;
-        animation: async_btn_spinner_dots 1.4s infinite ease-in-out;
+        animation: zs_async_btn_spinner_dots 1.4s infinite ease-in-out;
         animation-fill-mode: both;
 
         &:not(:first-child)

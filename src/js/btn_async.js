@@ -3,7 +3,7 @@
 
 /**
  *  @ngdoc directive
- *  @name zeus.widgets:btnAsync
+ *  @name zeus.widgets.directive:btnAsync
  *  @restrict C
  *
  *  @description

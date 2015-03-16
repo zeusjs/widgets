@@ -1,9 +1,13 @@
 'use strict';
 
+angular.module( 'zeus.widgets', [] );
+
+'use strict';
+
 
 /**
  *  @ngdoc directive
- *  @name zeus.widgets:btnAsync
+ *  @name zeus.widgets.directive:btnAsync
  *  @restrict C
  *
  *  @description
@@ -96,10 +100,6 @@ angular.module( 'zeus.widgets' ).directive( 'btnAsync', [ function () {
         }
     };
 } ] );
-
-'use strict';
-
-angular.module( 'zeus.widgets', [] );
 
 'use strict';
 
