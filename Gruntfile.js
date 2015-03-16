@@ -59,20 +59,11 @@ module.exports = function ( grunt ) {
         },
 
         // Compiles Sass to CSS and generates necessary files if requested
-        compass: {
+        sass: {
+            options: { },
             dist: {
-                options: {
-                    sassDir: 'src/sass',
-                    cssDir: '.tmp/css',
-                    relativeAssets: false,
-                    assetCacheBuster: false,
-                    raw: 'Sass::Script::Number.precision = 10\n'
-                }
-            },
-
-            server: {
-                options: {
-                    debugInfo: true
+                files: {
+                    '.tmp/css/zeus-widgets.css': 'src/sass/index.scss'
                 }
             }
         },
@@ -100,7 +91,7 @@ module.exports = function ( grunt ) {
             options: {
                 banner: '/*! Copyright (C) <%= grunt.template.today("yyyy") %>. ' +
             'ZeusJS \n' +
-            '<%= pkg.fullName %> - v<%= pkg.version %>.' +
+            '<%= pkg.name %> - v<%= pkg.version %>.' +
             '<%= process.env.BUILD_NUMBER %> */\n',
                 compress: {
                     drop_console: true
@@ -124,8 +115,8 @@ module.exports = function ( grunt ) {
                     root: '.',
                     keepSpecialComments: 0,
                     banner: '/*! Copyright (C) <%= grunt.template.today("yyyy") %>. ' +
-                        'Symantec Corporation \n' +
-                        '<%= pkg.fullName %> - v<%= pkg.version %>.' +
+                        'ZeusJS \n' +
+                        '<%= pkg.name %> - v<%= pkg.version %>.' +
                         '<%= process.env.BUILD_NUMBER %> */\n'
                 },
 
@@ -296,7 +287,7 @@ module.exports = function ( grunt ) {
         grunt.registerTask( 'build', [
             'test',
             'clean:dist',
-            'compass',
+            'sass',
             'autoprefixer',
             'concat',
             'ngAnnotate',
