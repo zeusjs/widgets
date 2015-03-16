@@ -4,7 +4,7 @@
   "description": "A set of input widgets and other UI components built using AngularJS",
   "main": "dist/index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
     "deploy": "grunt build && ./publish"
   },
   "repository": {
