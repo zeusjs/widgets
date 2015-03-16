@@ -16,6 +16,9 @@ module.exports = function ( config ) {
             'externs/libs/angular.js',
             'externs/libs/angular-mocks.js',
             'externs/libs/d3.js',
+
+            'test/mock_templates_module.js',
+
             'src/js/index.js',
             'src/js/*.js',
             'src/html/*.html',

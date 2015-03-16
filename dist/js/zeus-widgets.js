@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module( 'zeus.widgets', [] );
+angular.module( 'zeus.widgets', [ 'zeus.widgets.templates' ] );
 
 'use strict';
 

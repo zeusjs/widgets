@@ -70,11 +70,43 @@ module.exports = function ( grunt ) {
         },
 
 
+        html2js: {
+            dist: {
+                options: {
+                    module: 'zeus.widgets.templates',
+                    base: 'src',
+                    useStrict: true,
+                    singleModule: true,
+                    htmlmin: {
+                        collapseBooleanAttributes: true,
+                        collapseWhitespace: true,
+                        removeAttributeQuotes: true,
+                        removeComments: true,
+                        removeEmptyAttributes: true,
+                        removeRedundantAttributes: true,
+                        removeScriptTypeAttributes: true,
+                        removeStyleLinkTypeAttributes: true
+                    }
+                },
+                files: [ {
+                    expand: true,
+                    src: [ 'src/**/*.html' ],
+                    dest: '.tmp/js',
+                    ext: '.html.js'
+
+                } ]
+            }
+        },
+
         concat: {
-          dist: {
-              src: [ 'src/js/index.js', 'src/js/*.js' ],
-              dest: '.tmp/js/zeus-widgets.js'
-          }
+            dist_js: {
+                src: [ 'src/js/index.js', 'src/js/*.js' ],
+                dest: '.tmp/js/zeus-widgets.js'
+            },
+            dist_tmpl: {
+                src: [ '.tmp/js/src/html/*.html.js' ],
+                dest: '.tmp/js/zeus-widgets.templates.js'
+            }
         },
 
         jscs: {
@@ -103,7 +135,10 @@ module.exports = function ( grunt ) {
             dist: {
               files: {
                 'dist/js/zeus-widgets.min.js': [
-                    'dist/js/zeus-widgets.js'
+                    '.tmp/js/zeus-widgets.js'
+                ],
+                'dist/js/zeus-widgets.templates.min.js': [
+                    '.tmp/js/zeus-widgets.templates.js'
                 ]
               }
             }
@@ -123,7 +158,7 @@ module.exports = function ( grunt ) {
 
                 target: {
                     files: {
-                        'dist/css/zeus-widgets.min.css': [ '.tmp/css/*.css' ]
+                        'dist/css/zeus-widgets.min.css': [ 'dist/css/*.css' ]
                     }
                 }
             },
@@ -135,8 +170,8 @@ module.exports = function ( grunt ) {
                     files: [ {
                         expand: true,
                         cwd: '.tmp/js',
-                        src: 'zeus-widgets.js',
-                        dest: 'dist/js'
+                        src: '*.js',
+                        dest: '.tmp/js'
                     } ]
                 }
             },
@@ -155,6 +190,7 @@ module.exports = function ( grunt ) {
                         'externs/libs/jquery.js',
                         'externs/libs/angular.js',
                         'externs/libs/angular-animate.js',
+                        'dist/js/zeus-widgets.templates.js',
                         'dist/js/zeus-widgets.js'
                     ]
                 },
@@ -226,7 +262,15 @@ module.exports = function ( grunt ) {
                             cwd: 'src/html',
                             dest: 'dist/html',
                             src: [ '*.html' ]
+                        },
+                        {
+                            expand: true,
+                            flatten: true,
+                            cwd: '.tmp/js',
+                            dest: 'dist/js',
+                            src: [ '*.js' ]
                         }
+
                     ]
                 }
 
@@ -283,7 +327,7 @@ module.exports = function ( grunt ) {
         ] );
 
         grunt.registerTask( 'test', [
-            'lint',
+            'jscs',
             'jshint:test',
             'karma'
         ] );
@@ -293,10 +337,12 @@ module.exports = function ( grunt ) {
         ] );
 
         grunt.registerTask( 'build', [
-            'test',
-            'clean:dist',
+            'lint',
+            'karma',
+            'clean',
             'sass',
             'autoprefixer',
+            'html2js',
             'concat',
             'ngAnnotate',
             'copy:build',
