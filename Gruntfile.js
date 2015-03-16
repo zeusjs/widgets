@@ -36,6 +36,7 @@ module.exports = function ( grunt ) {
                     src: [
                         '.tmp',
                         'dist/*',
+                        'docs',
                         '!dist/.git*'
                     ]
                 } ]
@@ -71,7 +72,7 @@ module.exports = function ( grunt ) {
 
         concat: {
           dist: {
-              src: [ 'src/js/*.js' ],
+              src: [ 'src/js/index.js', 'src/js/*.js' ],
               dest: '.tmp/js/zeus-widgets.js'
           }
         },
@@ -148,12 +149,13 @@ module.exports = function ( grunt ) {
                     startPage: '/api',
                     editExample: false,
                     styles: [
-                        'docs/css/zeus.css'
+                        'dist/css/zeus-widgets.css'
                     ],
                     scripts: [
-                        'docs/js/vendor.js',
-                        'docs/js/angular-animate.min.js',
-                        'docs/js/zeus-ui.js'
+                        'externs/libs/jquery.js',
+                        'externs/libs/angular.js',
+                        'externs/libs/angular-animate.js',
+                        'dist/js/zeus-widgets.js'
                     ]
                 },
                 api: [
@@ -183,24 +185,24 @@ module.exports = function ( grunt ) {
             // Copies remaining files to places other tasks can use
             copy: {
 
-
-                docs: {
-                    files: [
-                    {
-                        expand: true,
-                        flatten: true,
-                        cwd: '.tmp/concat/scripts',
-                        dest: 'docs/js',
-                        src: [ '*.js' ]
-                    },
-                    {
-                        expand: true,
-                        flatten: true,
-                        cwd: 'dist/css',
-                        dest: 'docs/css',
-                        src: [ '*.css' ]
-                    } ]
-                },
+                //
+                // docs: {
+                //     files: [
+                //     {
+                //         expand: true,
+                //         flatten: true,
+                //         cwd: '.tmp/concat/scripts',
+                //         dest: 'docs/js',
+                //         src: [ '*.js' ]
+                //     },
+                //     {
+                //         expand: true,
+                //         flatten: true,
+                //         cwd: 'dist/css',
+                //         dest: 'docs/css',
+                //         src: [ '*.css' ]
+                //     } ]
+                // },
 
                 build: {
                     files: [
@@ -210,6 +212,13 @@ module.exports = function ( grunt ) {
                             cwd: 'src/sass',
                             dest: 'dist/sass',
                             src: [ '*.scss' ]
+                        },
+                        {
+                            expand: true,
+                            flatten: true,
+                            cwd: '.tmp/css',
+                            dest: 'dist/css',
+                            src: [ '*.css' ]
                         },
                         {
                             expand: true,
@@ -280,7 +289,6 @@ module.exports = function ( grunt ) {
         ] );
 
         grunt.registerTask( 'docs', [
-            'copy:docs',
             'ngdocs'
         ] );
 
@@ -292,9 +300,9 @@ module.exports = function ( grunt ) {
             'concat',
             'ngAnnotate',
             'copy:build',
-            // 'docs',
             'cssmin',
             'uglify',
+            'docs',
             'sloc'
         ] );
     };
