@@ -1,4 +1,4 @@
 /*! Copyright (C) 2015. ZeusJS 
 zeus-widgets - v0.0.1. */
 
-.error-msg-block{padding:5px;font-size:.9em;height:1.1em}
+.error-msg-block{padding:5px;font-size:.9em;height:1.1em}.simple-toggle-wrap{border:1px solid #FFF;cursor:pointer;color:#333;min-width:100px;text-align:left;padding:3px 0 5px 5px;background-color:#FFF;transition:all .2s ease-in}.simple-toggle-wrap.btn{border-radius:1em}.simple-toggle-wrap.state-off{background:#FFF;border-style:dashed}.simple-toggle-wrap.state-on{border-style:solid}.simple-toggle-wrap .toggle-icon{color:#FFF;float:left;border-radius:100%;background:#FFF;border:1px solid #FFF;padding:3px;font-size:.8em;transition:background-color .2s ease-in;margin-right:5px}.simple-toggle-wrap .text-message{margin-right:5px}
