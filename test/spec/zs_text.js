@@ -4,7 +4,7 @@ describe( 'Directive: zsText', function () {
 
     // load the directive's module
     beforeEach( module( 'zeus.widgets' ) );
-    beforeEach( module( 'templates/directives/text_template.html' ) );
+    beforeEach( module( 'html/zs_text.html' ) );
 
     var element,
         scope, domStr,

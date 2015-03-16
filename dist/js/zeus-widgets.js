@@ -1,3 +1,5 @@
+angular.module( 'zeus.widgets', [] );
+
 'use strict';
 
 /**
