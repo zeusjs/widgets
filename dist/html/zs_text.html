@@ -1,0 +1,40 @@
+<div class="form-group has-feedback"
+    ng-class="{'has-warning': validation.level == 'warning',
+            'has-error': validation.level == 'error',
+            'has-success': ( validation.level == 'success' && showTick )}">
+
+    <label>
+        {{ label }}
+        <span class="mandatory-asterisk text-danger" ng-if="mandatory">
+            *
+        </span>
+    </label>
+
+    <input type="text" class="form-control" ng-blur="validationHandler()"
+        placeholder="{{ placeholder }}" ng-model="zsModel" ng-disabled="isDisabled">
+
+    <span data-role="icon"
+        class="fa form-control-feedback"
+        ng-class="{'fa-exclamation-triangle': validation.level == 'warning',
+            'fa-times': validation.level == 'error',
+            'fa-check': ( validation.level == 'success' && showTick ),
+            'fa-spin': validation.inprogress,
+            'text-muted': validation.inprogress,
+            'fa-circle-o-notch': validation.inprogress}">
+    </span>
+
+    <div class="error-msg-block"
+        data-role="errorBlck"
+        ng-class="{'validation-warning': validation.level == 'warning',
+            'validation-error': validation.level == 'error'}">
+
+        <span class="error-sgn fa"
+            ng-show="validation.level != 'success'"
+            ng-class="{'fa-exclamation-triangle': validation.level == 'warning',
+            'fa-times': validation.level == 'error'}">
+        </span>
+
+        <span data-role="errormsg">{{ validation.msg }}</span>
+    </div>
+
+</div>

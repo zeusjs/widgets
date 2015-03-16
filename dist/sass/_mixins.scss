@@ -1,0 +1,10 @@
+@mixin btn_async_variant($type, $color)
+{
+    .btn-#{$type} .btn-async-spinner
+    {
+        >div
+        {
+            border-color: darken($color, 10%);
+        }
+    }
+}

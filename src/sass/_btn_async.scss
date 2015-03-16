@@ -1,0 +1,59 @@
+.btn-async
+{
+    &.is-loading
+    {
+        cursor: wait;
+
+        .btn-async-spinner
+        {
+            display: block;
+        }
+
+        .btn-async-text
+        {
+            display: none;
+        }
+    }
+}
+
+.btn-async-spinner
+{
+    margin: 0 auto;
+    margin-right: 10px;
+    width: 30px;
+    text-align: center;
+    display: none;
+
+    > div {
+        width: 10px;
+        height: 10px;
+        background-color: $color_white;
+        border: 1px solid;
+        border-radius: 100%;
+        display: inline-block;
+        animation: async_btn_spinner_dots 1.4s infinite ease-in-out;
+        animation-fill-mode: both;
+
+        &:not(:first-child)
+        {
+            margin-left: 5px;
+        }
+    }
+
+
+    .bounce1 {
+        animation-delay: -0.32s;
+    }
+
+    .bounce2 {
+        animation-delay: -0.16s;
+    }
+
+}
+
+
+@include btn_async_variant("danger", $brand-danger);
+@include btn_async_variant("warning", $brand-warning);
+@include btn_async_variant("success", $brand-success);
+@include btn_async_variant("primary", $brand-primary);
+@include btn_async_variant("caution", $brand-caution);
