@@ -1,9 +1,11 @@
- language: node_js
- node_js:
-   - "0.10"
-
- before_script:
+language: node_js
+node_js:
+  - "0.10"
+before_script:
   - npm install --quiet -g grunt-cli karma
   - npm install
-
- script: grunt build
+script: npm run-script deploy
+env:
+  global:
+    - GH_REF: github.com/zeusjs/widgets.git
+    - secure: YVMS1sNKwddVBZ/DAKXynmSCbA1TwlmF8dQ80gYx6KDRxQEPGWpFqrSJEd5s3/YeeKWk03yQCYGTmqac5i1xTte3Bji2lTe9tv5c+qf4OXVDNE/t/yCdSJPJa/a25Jr1yMBvusPlmAWnooR0HOWK+rkhK3FR1NedWUSJNm79fww=
