@@ -27,7 +27,7 @@
     > div {
         width: 10px;
         height: 10px;
-        background-color: $color_white;
+        background-color: #FFFFFF;
         border: 1px solid;
         border-radius: 100%;
         display: inline-block;
@@ -56,4 +56,4 @@
 @include btn_async_variant("warning", $brand-warning);
 @include btn_async_variant("success", $brand-success);
 @include btn_async_variant("primary", $brand-primary);
-@include btn_async_variant("caution", $brand-caution);
+@include btn_async_variant("info", $brand-primary);
