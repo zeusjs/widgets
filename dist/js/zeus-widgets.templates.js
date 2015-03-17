@@ -9,6 +9,6 @@ angular.module('zeus.widgets.templates', []).run(['$templateCache', function($te
     "            'fa-spin': validation.inprogress,\n" +
     "            'text-muted': validation.inprogress,\n" +
     "            'fa-circle-o-notch': validation.inprogress}\"></span><div class=error-msg-block data-role=errorBlck ng-class=\"{'validation-warning': validation.level == 'warning',\n" +
-    "            'validation-error': validation.level == 'error'}\"><span class=\"error-sgn fa\" ng-show=\"validation.level != 'success'\" ng-class=\"{'fa-exclamation-triangle': validation.level == 'warning',\n" +
+    "            'validation-error': validation.level == 'error'}\"><span class=\"error-sign fa\" ng-show=\"validation.level != 'success'\" ng-class=\"{'fa-exclamation-triangle': validation.level == 'warning',\n" +
     "            'fa-times': validation.level == 'error'}\"></span> <span data-role=errormsg>{{ validation.msg }}</span></div></div>");
 }]);
