@@ -17,8 +17,6 @@ git clone "https://${GH_TOKEN}@${GH_REF}"
 cd widgets
 git config user.name "ZeusJS Build Bot"
 git config user.email "zeusjs.bot@gmail.com"
-npm install --quiet -g grunt-cli karma
-npm install
-grunt build
+cp -R ../../dist/* dist
 git commit dist -m "Publish latest build artifacts"
 git push "https://${GH_TOKEN}@${GH_REF}" > /dev/null 2>&1
