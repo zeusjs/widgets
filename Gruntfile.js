@@ -72,30 +72,14 @@ module.exports = function ( grunt ) {
 
 
         html2js: {
-            dist: {
-                options: {
-                    module: 'zeus.widgets.templates',
-                    base: 'src',
-                    useStrict: true,
-                    singleModule: true,
-                    htmlmin: {
-                        collapseBooleanAttributes: true,
-                        collapseWhitespace: true,
-                        removeAttributeQuotes: true,
-                        removeComments: true,
-                        removeEmptyAttributes: true,
-                        removeRedundantAttributes: true,
-                        removeScriptTypeAttributes: true,
-                        removeStyleLinkTypeAttributes: true
-                    }
-                },
-                files: [ {
-                    expand: true,
-                    src: [ 'src/**/*.html' ],
-                    dest: '.tmp/js',
-                    ext: '.html.js'
-
-                } ]
+            options: {
+                module: 'zeus.widgets.templates',
+                base: 'src',
+                singleModule: true
+            },
+            main: {
+                src: [ 'src/html/*.html' ],
+                dest: '.tmp/js/zeus-widgets.templates.js'
             }
         },
 
@@ -103,10 +87,6 @@ module.exports = function ( grunt ) {
             dist_js: {
                 src: [ 'src/js/index.js', 'src/js/*.js' ],
                 dest: '.tmp/js/zeus-widgets.js'
-            },
-            dist_tmpl: {
-                src: [ '.tmp/js/src/html/*.html.js' ],
-                dest: '.tmp/js/zeus-widgets.templates.js'
             }
         },
 
@@ -343,7 +323,7 @@ module.exports = function ( grunt ) {
             'clean',
             'sass',
             'autoprefixer',
-            'html2js',
+            'html2js:main',
             'concat',
             'ngAnnotate',
             'copy:build',
