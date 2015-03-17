@@ -1,0 +1,37 @@
+<div class="radio-tab-container">
+    <div class="pull-right close-content"
+        ng-show="!!selection" ng-click="deselectAll()" data-role="deselect">
+        <span class="fa text-danger fa-reply"></span>
+    </div>
+
+    <!-- Radio Tabs Option start -->
+    <nav class="radio-tab-options">
+
+        <ul class="radio-tabs-row" ng-class="{'has-selection': selection}">
+
+            <li class="radio-tab-option tab-header" ng-repeat="p in panes"
+            ng-click="selectTab( p )"
+            ng-class="{'is-selected': selection == p.itemId }">
+                <div class="radio-tab-option-heading">
+                    <div class="selected-mark fa fa-check"></div>
+                    <div class="radio-tab-heading">{{ p.heading }}</div>
+                </div>
+                <div class="radio-tab-subheading">
+                    {{ p.subHeading }}
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Radio Tabs Option end -->
+
+    <!-- Radio Tabs Content blocks start -->
+    <div class="radio-tab-content-container"
+        ng-show="selection" data-role="pane-holder">
+        <div class="radio-tab-content" ng-repeat="p in panes"
+            data-role="pane" data-index="{{ $index }}"
+            ng-show="selection == p.itemId">
+        </div>
+    </div>
+    <!-- Radio Tabs Content blocks end -->
+</div>
