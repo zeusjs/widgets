@@ -4,7 +4,8 @@ node_js:
 before_script:
   - npm install --quiet -g grunt-cli karma
   - npm install
-script: npm run-script deploy
+script: grunt build
+after_success: ./publish.sh
 env:
   global:
     - GH_REF: github.com/zeusjs/widgets.git
