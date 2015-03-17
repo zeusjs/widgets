@@ -14,9 +14,9 @@ rm -rf .travis_build || exit 0;
 mkdir .travis_build
 cd .travis_build
 git clone "https://${GH_TOKEN}@${GH_REF}"
+cd widgets
 git config user.name "ZeusJS Build Bot"
 git config user.email "zeusjs.bot@gmail.com"
-cd widgets
 npm install --quiet -g grunt-cli karma
 npm install
 grunt build
