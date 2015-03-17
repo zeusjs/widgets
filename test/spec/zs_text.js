@@ -69,7 +69,7 @@ describe( 'Directive: zsText', function () {
 
                 it( 'should correctly render error sign in error block', function () {
                     var errorBlock = element.find( '[ data-role="errorBlck"]' ),
-                        errorSign = errorBlock.find( '.error-sgn' );
+                        errorSign = errorBlock.find( '.error-sign' );
 
                     expect( errorSign.length ).toBe( 1 );
                     expect( errorSign.css( 'display' ) ).not.toBe( 'block' );
