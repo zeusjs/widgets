@@ -1,0 +1,148 @@
+
+.radio-tab-container {
+    border: 1px solid $color_panel_subtabs_border;
+    background-color: $color_panel_subtabs_bg;
+    margin: 0 auto 20px auto;
+
+    .close-content {
+        font-weight: normal;
+        font-size: 1.2em;
+        padding: 10px;
+        margin-right: 10px;
+        display: none;
+    }
+
+    .radio-tab-options {
+        display: table;
+
+        ul.radio-tabs-row {
+            display: table-row;
+
+            li.radio-tab-option {
+                display: table-cell;
+                text-decoration: none;
+                cursor: pointer;
+                padding: 10px;
+
+                .radio-tab-option-heading {
+                    .selected-mark {
+                        min-width: 15px;
+                        min-height: 15px;
+                        padding: 3px;
+                        margin-right: 5px;
+                        display: inline-block;
+                        background-color: darken($color_panel_subtabs_bg, 10%);
+                        border-radius: 50%;
+                        display: inline-block;
+                        font-size: 0.8em;
+                        color: darken($color_panel_subtabs_bg, 10%);
+                    }
+                    .radio-tab-heading {
+                        display: inline-block;
+                    }
+                }
+
+                .radio-tab-subheading {
+                    margin-left: 20px;
+                    font-size: .8em;
+                }
+
+                &.is-selected {
+                    background-color: white;
+                    .selected-mark {
+                        background-color: $color_green;
+                        color: white;
+                    }
+                }
+            }
+
+            >li.radio-tab-option:not(:last-child) {
+                border-right: 1px solid $color_panel_subtabs_border;
+            }
+        }
+    }
+
+    .radio-tab-content-container {
+        background-color: white;
+
+        .radio-tab-content
+        {
+            padding: 20px;
+        }
+    }
+}
+
+
+
+
+@media screen and (min-width: $screen-sm-min ) {
+
+    .radio-tabs-row
+    {
+        li.radio-tab-option
+        {
+            width: 5000px;
+        }
+    }
+
+}
+@media screen and (max-width: $screen-xs-max ) {
+
+    .radio-tab-container
+    {
+        .close-content
+        {
+            display: block;
+        }
+        .radio-tab-options {
+            display: block;
+
+            ul.radio-tabs-row {
+                display: block;
+                margin: 0px;
+                padding: 0px;
+
+                &.has-selection
+                {
+                    li.radio-tab-option
+                    {
+                        display: none;
+
+                        &.is-selected
+                        {
+                            display: block;
+                            width: 100%;
+                            border-bottom: none;
+                        }
+                    }
+                }
+
+                li.radio-tab-option {
+                    display: block;
+                    padding: 10px;
+                }
+
+                >li.radio-tab-option:not(:last-child) {
+                    border-bottom: 1px solid $color_panel_subtabs_border;
+                    border-right: none;
+                }
+            }
+
+            &.hideOptions {
+                display: none;
+            }
+
+            &.showOptions {
+                display: block;
+            }
+        }
+    }
+
+
+    .radio-tab-content-container {
+
+        min-height: 100px;
+        background-color: white;
+    }
+
+}

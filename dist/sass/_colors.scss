@@ -35,3 +35,16 @@ $brand-info: $color_blue_light !default;
 $brand-danger: $color_red !default;
 $brand-success: $color_green !default;
 $brand-warning: $color_amber !default;
+
+
+// Panels
+$color_panel_header_bg: #f0f0f0 !default;
+$color_panel_heading_text: $color_gray_darker !default;
+$color_panel_borders: darken($color_panel_header_bg, 10%) !default;
+$color_panel_shadow: darken(white, 5%) !default;
+
+
+
+$color_panel_subtabs_bg: #dee8f0 !default; //#e3ded6;
+$color_panel_subtabs_border: darken($color_panel_subtabs_bg, 10%) !default;
+$color_panel_subtabs_selected_border: $brand-primary;
