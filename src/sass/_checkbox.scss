@@ -1,0 +1,38 @@
+.zs-checkbox {
+    background-color: $color_white;
+    display: inline-block;
+    margin: 0 0.25em;
+    border: 1px solid $color_checkbox_border;
+    cursor: pointer;
+
+    label {
+        display: block;
+        position: relative;
+        cursor: pointer;
+
+        &:after {
+            transform: rotate( -45deg );
+            transform-origin: (left, top);
+            content: '';
+            display: block;
+            position: absolute;
+            border-left-color: $color_checkbox_tick;
+            border-bottom-color: $color_checkbox_tick;
+            border-left-style: solid;
+            border-bottom-style: solid;
+
+        }
+
+        &:hover:after { border-color: $color_checkbox_tick_hover; }
+
+        &.is-active:after {
+            border-color: $color_checkbox_tick_active;
+        }
+    }
+    input { display: none; }
+}
+
+
+@include zs_checkbox_variant(sm, 1);
+@include zs_checkbox_variant(lg, 2);
+@include zs_checkbox_variant(md, 1.5);
