@@ -26,7 +26,7 @@ $color_orange: #ff9800;
 $color_orange_deep: #ff5722;
 $color_brown: #795548;
 $color_blue_grey: #607d8b;
-
+$color_white: #FFF;
 
 
 // Bootstrap colors
@@ -48,3 +48,9 @@ $color_panel_shadow: darken(white, 5%) !default;
 $color_panel_subtabs_bg: #dee8f0 !default; //#e3ded6;
 $color_panel_subtabs_border: darken($color_panel_subtabs_bg, 10%) !default;
 $color_panel_subtabs_selected_border: $brand-primary;
+
+// Checkbox
+$color_checkbox_border: $color_gray;
+$color_checkbox_tick: $color_gray_muted;
+$color_checkbox_tick_hover: $color_gray_lighter;
+$color_checkbox_tick_active: $color_green_light;

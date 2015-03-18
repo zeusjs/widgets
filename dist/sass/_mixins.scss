@@ -8,3 +8,24 @@
         }
     }
 }
+
+@mixin zs_checkbox_variant($size, $ratio)
+{
+    .zs-checkbox.zs-checkbox-#{$size}
+    {
+        height: 15px * $ratio;
+        width: 15px * $ratio;
+        border-radius: 2px * $ratio;
+        label {
+            height: 16px * $ratio;
+            width: 16px * $ratio;
+            &:after {
+                border-left: 0  0 ( 2px * $ratio ) (2px* $ratio);
+                height: 5px * $ratio;
+                left: 2px * $ratio;
+                top: 4px * $ratio;
+                width: 10px * $ratio;
+            }
+        }
+    }
+}

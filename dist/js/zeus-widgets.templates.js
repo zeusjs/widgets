@@ -1,4 +1,15 @@
 angular.module('zeus.widgets.templates', []).run(['$templateCache', function($templateCache) {
+  $templateCache.put("html/checkbox.html",
+    "<div class=\"zs-checkbox\"\n" +
+    "    ng-class=\"{'zs-checkbox-lg': size == 'large',\n" +
+    "                'zs-checkbox-sm': size == 'small',\n" +
+    "                'zs-checkbox-md': size == 'medium'}\">\n" +
+    "    <input type=\"checkbox\"\n" +
+    "            ng-model=\"itemValue\"/>\n" +
+    "    <label for=\"cb\" ng-click=\"itemValue = !itemValue\"\n" +
+    "        ng-class=\"{'is-active': itemValue == true}\"></label>\n" +
+    "</div>\n" +
+    "");
   $templateCache.put("html/radio_tabs.html",
     "<div class=\"radio-tab-container\">\n" +
     "    <div class=\"pull-right close-content\"\n" +

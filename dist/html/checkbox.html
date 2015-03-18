@@ -1,0 +1,9 @@
+<div class="zs-checkbox"
+    ng-class="{'zs-checkbox-lg': size == 'large',
+                'zs-checkbox-sm': size == 'small',
+                'zs-checkbox-md': size == 'medium'}">
+    <input type="checkbox"
+            ng-model="itemValue"/>
+    <label for="cb" ng-click="itemValue = !itemValue"
+        ng-class="{'is-active': itemValue == true}"></label>
+</div>

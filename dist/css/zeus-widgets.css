@@ -148,3 +148,74 @@
   .radio-tab-content-container {
     min-height: 100px;
     background-color: white; } }
+
+.zs-checkbox {
+  background-color: #FFF;
+  display: inline-block;
+  margin: 0 0.25em;
+  border: 1px solid #999;
+  cursor: pointer; }
+  .zs-checkbox label {
+    display: block;
+    position: relative;
+    cursor: pointer; }
+    .zs-checkbox label:after {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transform-origin: left, top;
+      transform-origin: left, top;
+      content: '';
+      display: block;
+      position: absolute;
+      border-left-color: #ededed;
+      border-bottom-color: #ededed;
+      border-left-style: solid;
+      border-bottom-style: solid; }
+    .zs-checkbox label:hover:after {
+      border-color: #eee; }
+    .zs-checkbox label.is-active:after {
+      border-color: #8bc34a; }
+  .zs-checkbox input {
+    display: none; }
+
+.zs-checkbox.zs-checkbox-sm {
+  height: 15px;
+  width: 15px;
+  border-radius: 2px; }
+  .zs-checkbox.zs-checkbox-sm label {
+    height: 16px;
+    width: 16px; }
+    .zs-checkbox.zs-checkbox-sm label:after {
+      border-left: 0 0 2px 2px;
+      height: 5px;
+      left: 2px;
+      top: 4px;
+      width: 10px; }
+
+.zs-checkbox.zs-checkbox-lg {
+  height: 30px;
+  width: 30px;
+  border-radius: 4px; }
+  .zs-checkbox.zs-checkbox-lg label {
+    height: 32px;
+    width: 32px; }
+    .zs-checkbox.zs-checkbox-lg label:after {
+      border-left: 0 0 4px 4px;
+      height: 10px;
+      left: 4px;
+      top: 8px;
+      width: 20px; }
+
+.zs-checkbox.zs-checkbox-md {
+  height: 22.5px;
+  width: 22.5px;
+  border-radius: 3px; }
+  .zs-checkbox.zs-checkbox-md label {
+    height: 24px;
+    width: 24px; }
+    .zs-checkbox.zs-checkbox-md label:after {
+      border-left: 0 0 3px 3px;
+      height: 7.5px;
+      left: 3px;
+      top: 6px;
+      width: 15px; }
