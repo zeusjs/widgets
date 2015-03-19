@@ -49,6 +49,12 @@ angular.module('zeus.widgets.templates', []).run(['$templateCache', function($te
     "    <!-- Radio Tabs Content blocks end -->\n" +
     "</div>\n" +
     "");
+  $templateCache.put("html/simple_toggle.html",
+    "<div class=\"btn btn-sm simple-toggle-wrap\">\n" +
+    "    <span data-role=\"icon\" class=\"toggle-icon\">&nbsp;</span>\n" +
+    "    <span class=\"text-message\">{{text}}</span>\n" +
+    "</div>\n" +
+    "");
   $templateCache.put("html/zs_text.html",
     "<div class=\"form-group has-feedback\"\n" +
     "    ng-class=\"{'has-warning': validation.level == 'warning',\n" +
