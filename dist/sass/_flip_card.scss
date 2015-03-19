@@ -1,0 +1,61 @@
+.zs-flip-card
+{
+    position: relative;
+    z-index: 1001;
+    perspective: 1000;
+    //display: inline-block;
+
+    .face-container
+    {
+        transition: all 0.4s;
+        transform-style: preserve-3d;
+
+        &.is-flipped
+        {
+            transform: rotateY(180deg);
+        }
+    }
+
+    .face
+    {
+        position: absolute;
+        padding: 10px;
+        width: 100%;
+        background-color: $color_white;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include make_shadow();
+    }
+
+    .header
+    {
+        margin-bottom: 10px;
+        h6
+        {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .flip-btn
+        {
+            font-size: 0.9em;
+            cursor: pointer;
+            color: $color_gray;
+        }
+    }
+
+    .face-front
+    {
+        z-index: 1000;
+        transform: rotateY(0deg);
+    }
+
+    .face-back
+    {
+        transform: rotateY(180deg);
+    }
+
+}

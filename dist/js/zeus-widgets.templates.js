@@ -10,6 +10,33 @@ angular.module('zeus.widgets.templates', []).run(['$templateCache', function($te
     "        ng-class=\"{'is-active': itemValue == true}\"></label>\n" +
     "</div>\n" +
     "");
+  $templateCache.put("html/flip_card.html",
+    "<div class=\"zs-flip-card\">\n" +
+    "    <div class=\"face-container\">\n" +
+    "        <div class=\"face face-front\">\n" +
+    "            <div class=\"header clearfix\">\n" +
+    "                <h6 class=\"pull-left\">\n" +
+    "\n" +
+    "                </h6>\n" +
+    "                <span class=\"flip-btn pull-right\">\n" +
+    "                    &#10149\n" +
+    "                </span>\n" +
+    "            </div>\n" +
+    "\n" +
+    "        </div>\n" +
+    "        <div class=\"face face-back\">\n" +
+    "            <div class=\"header clearfix\">\n" +
+    "                <h6 class=\"pull-left\">\n" +
+    "\n" +
+    "                </h6>\n" +
+    "                <span class=\"flip-btn pull-right\">\n" +
+    "                    &#10149\n" +
+    "                </span>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "");
   $templateCache.put("html/radio_tabs.html",
     "<div class=\"radio-tab-container\">\n" +
     "    <div class=\"pull-right close-content\"\n" +

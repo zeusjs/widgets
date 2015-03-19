@@ -9,6 +9,7 @@
     }
 }
 
+//Mixin for varying size of checkbox
 @mixin zs_checkbox_variant($size, $ratio)
 {
     .zs-checkbox.zs-checkbox-#{$size}
@@ -28,4 +29,9 @@
             }
         }
     }
+}
+
+//Mixin for consistent shadows across all panels
+@mixin make_shadow() {
+    box-shadow: 0px 1px 3px 2px $color_panel_shadow;
 }
