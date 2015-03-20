@@ -103,7 +103,7 @@ module.exports = function ( config ) {
         },
 
         coverageReporter: {
-            type: 'cobertura',
+            type: 'lcov',
             dir: '.coverage/'
         }
     } );
