@@ -82,6 +82,94 @@ angular.module('zeus.widgets.templates', []).run(['$templateCache', function($te
     "    <span class=\"text-message\">{{text}}</span>\n" +
     "</div>\n" +
     "");
+  $templateCache.put("html/table_fragment.html",
+    "<div class=\"table-fragment-wrap\">\n" +
+    "    <div class=\"table-fragment-header\" ng-show=\"extractHeader\">\n" +
+    "        <img ng-src=\"{{ headerIcon }}\" ng-if=\"headerIcon\"/>\n" +
+    "        <h3 class=\"external-header\">{{ heading }}</h3>\n" +
+    "        <div class=\"btn-group fragment-action-group\" dropdown ng-show=\"hidecolumn==='true'\">\n" +
+    "            <button type=\"button\" class=\"dropdown-toggle fragment-action\" dropdown-toggle>\n" +
+    "                <span class=\"fa fa-ellipsis-v icon\"></span>\n" +
+    "            </button>\n" +
+    "\n" +
+    "            <ul class=\"dropdown-menu dropdown-menu-right column-container\" ng-if=\"extractHeader\" role=\"menu\">\n" +
+    "                    <li ng-repeat=\"h in headers\"\n" +
+    "                        ng-click=\"hideColumn(h.columnNumber, h)\"\n" +
+    "                        ng-hide=\"h.allowed_hide\">\n" +
+    "                        <a>\n" +
+    "                            <i class=\"fa fa-check text-primary pull-right\"\n" +
+    "                                ng-show=\"h.selected\"></i>\n" +
+    "                            {{h.label}}\n" +
+    "                        </a>\n" +
+    "                    </li>\n" +
+    "            </ul>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"card has-table table-fragment\"\n" +
+    "        ng-class=\"{'no-header': extractHeader}\">\n" +
+    "        <div class=\"card-head\" ng-if=\"!extractHeader\">\n" +
+    "            <span class=\"fa {{headerIcon}} icon\"></span>\n" +
+    "            <h4>{{heading}}</h4>\n" +
+    "            <div class=\"btn-group pull-right\" dropdown ng-show=\"hidecolumn==='true'\">\n" +
+    "                <button type=\"button\" class=\"dropdown-toggle fragment-action\" dropdown-toggle>\n" +
+    "                    <span class=\"fa fa-ellipsis-v icon\">&#9776;</span>\n" +
+    "                </button>\n" +
+    "                <ul class=\"dropdown-menu column-container\" role=\"menu\">\n" +
+    "                        <li ng-repeat=\"h in headers\"\n" +
+    "                            ng-click=\"hideColumn(h.columnNumber, h)\"\n" +
+    "                            ng-hide=\"h.allowed_hide\">\n" +
+    "                            <a class=\"column\">\n" +
+    "                                <span class=\"fa fa-check text-primary pull-right\"\n" +
+    "                                    ng-show=\"h.selected\">\n" +
+    "                                    &#10003;\n" +
+    "                                </span>\n" +
+    "                                {{h.label}}\n" +
+    "                            </a>\n" +
+    "                        </li>\n" +
+    "                </ul>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"card-body async-load\" data-role=\"table-holder\">\n" +
+    "            <div class=\"load-mask\" data-role=\"load-mask\">\n" +
+    "                <div class=\"loading-text\">\n" +
+    "                    <span class=\"fa fa-spin fa-circle-o-notch\"></span>\n" +
+    "                    Updating...\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "            <div class=\"no-record-message\" ng-show=\"loadingStatus === 'failed'\">\n" +
+    "                Some error occured while loading the data.\n" +
+    "            </div>\n" +
+    "            <div class=\"no-record-message\" ng-show=\"loadingStatus === 'empty'\">\n" +
+    "                There are no records.\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"loadMore\" ng-show=\"totalRecords>displayLimit\">\n" +
+    "            <span class=\"pull-left\" ng-show=\"paginate\">\n" +
+    "                {{ displayLimit }} per page.\n" +
+    "            </span>\n" +
+    "\n" +
+    "<!--             <button type=\"button\" class=\"btn btn-primary btn-sm pull-right\"\n" +
+    "                ng-click=\"showAllRecords()\" ng-show=\"showAll\">\n" +
+    "                <span ng-hide=\"toggleShowText\">{{ 'TABLE.SHOW_ALL' | translate }}</span>\n" +
+    "                <span ng-show=\"toggleShowText\">{{ 'TABLE.PAGINATED' | translate }}</span>\n" +
+    "            </button> -->\n" +
+    "\n" +
+    "            <pagination total-items=\"totalRecords\" items-per-page=\"displayLimit\"\n" +
+    "                ng-model=\"currentPage\" max-size=\"5\"\n" +
+    "                class=\"pagination-small pull-right\" boundary-links=\"true\"\n" +
+    "                ng-change=\"loadPrevNextPage()\"\n" +
+    "                ng-show=\"paginate && !paginateMarker\">\n" +
+    "            </pagination>\n" +
+    "\n" +
+    "            <pager total-items=\"totalRecords\" ng-model=\"currentPage\"\n" +
+    "                items-per-page=\"displayLimit\"\n" +
+    "                ng-change=\"loadPrevNextPage()\"\n" +
+    "                ng-show=\"paginate && paginateMarker\"></pager>\n" +
+    "\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "");
   $templateCache.put("html/zs_text.html",
     "<div class=\"form-group has-feedback\"\n" +
     "    ng-class=\"{'has-warning': validation.level == 'warning',\n" +
