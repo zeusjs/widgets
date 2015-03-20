@@ -165,12 +165,14 @@ module.exports = function ( grunt ) {
                     startPage: '/api',
                     editExample: false,
                     styles: [
+                        'externs/libs/bootstrap-3.1.1.min.css',
                         'dist/css/zeus-widgets.css'
                     ],
                     scripts: [
                         'externs/libs/jquery.js',
                         'externs/libs/angular.js',
                         'externs/libs/angular-animate.js',
+                        'externs/libs/ui-bootstrap-tpls.js',
                         'dist/js/zeus-widgets.templates.js',
                         'dist/js/zeus-widgets.js'
                     ]

@@ -15,6 +15,7 @@ module.exports = function ( config ) {
             'externs/libs/jquery.js',
             'externs/libs/angular.js',
             'externs/libs/angular-mocks.js',
+            'externs/libs/ui-bootstrap-tpls.js',
             'externs/libs/d3.js',
 
             'test/mock_templates_module.js',

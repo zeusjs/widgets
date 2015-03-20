@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module( 'zeus.widgets', [ 'zeus.widgets.templates' ] );
+angular.module( 'zeus.widgets', [ 'ui.bootstrap', 'zeus.widgets.templates' ] );
