@@ -1,3 +1,38 @@
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
 @-webkit-keyframes zs_async_btn_spinner_dots {
   0%, 80%, 100% {
     -webkit-transform: scale(0);
@@ -6,7 +41,6 @@
   40% {
     -webkit-transform: scale(1);
     transform: scale(1); } }
-
 @keyframes zs_async_btn_spinner_dots {
   0%, 80%, 100% {
     -webkit-transform: scale(0);
@@ -16,6 +50,13 @@
     -webkit-transform: scale(1);
     transform: scale(1); } }
 
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
 .btn-async.is-loading {
   cursor: wait; }
   .btn-async.is-loading .btn-async-spinner {
@@ -64,11 +105,25 @@
 .btn-info .btn-async-spinner > div {
   border-color: #244ffb; }
 
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
 .error-msg-block {
   padding: 5px;
   font-size: .9em;
   height: 1.1em; }
 
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
 .radio-tab-container {
   border: 1px solid #bbd0e0;
   background-color: #dee8f0;
@@ -149,6 +204,13 @@
     min-height: 100px;
     background-color: white; } }
 
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
 .zs-checkbox {
   background-color: #FFF;
   display: inline-block;
@@ -220,6 +282,13 @@
       top: 6px;
       width: 15px; }
 
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
 .zs-flip-card {
   position: relative;
   z-index: 1001;
@@ -260,6 +329,13 @@
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg); }
 
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
 .simple-toggle-wrap {
   border: 1px solid #FFF;
   cursor: pointer;
@@ -298,6 +374,13 @@
   .simple-toggle-wrap .text-message {
     margin-right: 5px; }
 
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
 .card {
   padding: 0px;
   border: 1px solid #d6d6d6;

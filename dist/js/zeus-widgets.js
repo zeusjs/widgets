@@ -1,6 +1,27 @@
+/*!
+ * Copyright (C) 2015, Symantec Corporation
+ * All rights reserved.
+ * zeus-widgets v0.0.1
+ */
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
+
 'use strict';
 
 angular.module( 'zeus.widgets', [ 'ui.bootstrap', 'zeus.widgets.templates' ] );
+
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
 
 'use strict';
 
@@ -101,6 +122,14 @@ angular.module( 'zeus.widgets' ).directive( 'btnAsync', [ function () {
     };
 } ] );
 
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
+
 'use strict';
 
 /**
@@ -173,6 +202,14 @@ angular.module( 'zeus.widgets' )
         link: postLink
     };
 } );
+
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
 
 'use strict';
 
@@ -353,6 +390,14 @@ angular.module( 'zeus.widgets' )
     }
 ] );
 
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
+
 'use strict';
 
 /**
@@ -483,6 +528,14 @@ angular.module( 'zeus.widgets' )
         };
     }
 ] );
+
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
 
 'use strict';
 /*jshint bitwise: false */
@@ -678,6 +731,14 @@ angular.module( 'zeus.widgets' )
         }
     };
 } ] );
+
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
 
 'use strict';
 /* jshint camelcase: false */
@@ -1232,6 +1293,14 @@ angular.module( 'zeus.widgets' )
         link: postLink
     };
 }] );
+
+/**
+ * Copyright 2015, Symantec Corporation
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree
+ */
 
 'use strict';
 
