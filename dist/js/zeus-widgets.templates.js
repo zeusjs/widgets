@@ -170,6 +170,26 @@ angular.module('zeus.widgets.templates', []).run(['$templateCache', function($te
     "    </div>\n" +
     "</div>\n" +
     "");
+  $templateCache.put("html/zs_dropdown.html",
+    "<div ng-if=\"fieldLabel\">\n" +
+    "    <label>{{ fieldLabel }}</label>\n" +
+    "</div>\n" +
+    "<div class=\"zs-dropdown-wrapper\"\n" +
+    "    ng-class=\"{'is-active': isOpen == true}\">\n" +
+    "    <div ng-show=\"selectionCount == 0 || multiSelect\">{{defaultLabel}}</div>\n" +
+    "    <div ng-show=\"selectionCount > 0 && !multiSelect\">{{selectedItem}}</div>\n" +
+    "    <ul class=\"zs-dropdown\">\n" +
+    "        <li ng-repeat=\"item in items\"\n" +
+    "            ng-click=\"itemClick( item )\">\n" +
+    "            <a>{{item.textValue}}</a>\n" +
+    "            <span class=\"pull-right selection-icon\"\n" +
+    "                ng-show=\"item.isChecked\">\n" +
+    "                &#10003\n" +
+    "            </span>\n" +
+    "        </li>\n" +
+    "    </ul>\n" +
+    "</div>\n" +
+    "");
   $templateCache.put("html/zs_text.html",
     "<div class=\"form-group has-feedback\"\n" +
     "    ng-class=\"{'has-warning': validation.level == 'warning',\n" +

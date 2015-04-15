@@ -697,3 +697,86 @@
             right: 10px;
             top: 0%;
             height: 100%; } }
+
+.zs-dropdown-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  margin: 0 auto;
+  padding: 12px 15px;
+  background-color: #FFF;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px 2px #f2f2f2;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-out; }
+  .zs-dropdown-wrapper:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -3px;
+    border-width: 6px 6px 0px 6px;
+    border-style: solid;
+    border-color: #03a9f4 transparent; }
+  .zs-dropdown-wrapper div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 85%;
+    white-space: nowrap; }
+  .zs-dropdown-wrapper .zs-dropdown {
+    z-index: 1000;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+    margin-left: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #FFF;
+    border-radius: 0 0 5px 5px;
+    border: 1px solid #ededed;
+    border-top: none;
+    border-bottom: none;
+    list-style: none;
+    transition: all 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+    overflow-y: scroll; }
+    .zs-dropdown-wrapper .zs-dropdown li {
+      padding: 0 10px;
+      border-bottom: 1px solid #ededed; }
+      .zs-dropdown-wrapper .zs-dropdown li a {
+        display: block;
+        text-decoration: none;
+        color: #333;
+        padding: 10px 0;
+        transition: all 0.3s ease-out;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 85%;
+        white-space: nowrap; }
+      .zs-dropdown-wrapper .zs-dropdown li:last-child {
+        border-bottom: none; }
+      .zs-dropdown-wrapper .zs-dropdown li:hover a {
+        color: #03a9f4; }
+      .zs-dropdown-wrapper .zs-dropdown li .selection-icon {
+        color: #333;
+        position: relative;
+        top: -25px;
+        right: 3px; }
+  .zs-dropdown-wrapper.is-active {
+    border-radius: 5px 5px 0 0;
+    background-color: #03a9f4;
+    box-shadow: none;
+    border-bottom: none;
+    color: #FFF; }
+    .zs-dropdown-wrapper.is-active:after {
+      border-color: #5677fc transparent; }
+    .zs-dropdown-wrapper.is-active .zs-dropdown {
+      max-height: 400px;
+      box-shadow: 0px 1px 3px 2px #f2f2f2; }

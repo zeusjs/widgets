@@ -1,0 +1,104 @@
+.zs-dropdown-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    padding: 12px 15px;
+    background-color: $color_dropdown_bg;
+    border-radius: 5px;
+    @include make_shadow();
+    text-overflow: ellipsis;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-out;
+
+    &:after {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        margin-top: -3px;
+        border-width: 6px 6px 0px 6px;
+        border-style: solid;
+        border-color: $color_dropdown_base transparent;
+    }
+
+    div {
+        @include show_ellipsis( 85% );
+    }
+
+    .zs-dropdown {
+        z-index: 1000;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-top: 0;
+        margin-left: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        background-color: $color_dropdown_bg;
+        border-radius: 0 0 5px 5px;
+        border: 1px solid $color_dropdown_border;
+        border-top: none;
+        border-bottom: none;
+        list-style: none;
+        transition: all 0.3s ease-out;
+
+        max-height: 0;
+        overflow: hidden;
+        overflow-y: scroll;
+
+        li {
+            padding: 0 10px;
+            border-bottom: 1px solid $color_dropdown_border;
+
+            a {
+                display: block;
+                text-decoration: none;
+                color: $color_dropdown_text;
+                padding: 10px 0;
+                transition: all 0.3s ease-out;
+                @include show_ellipsis( 85% );
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                a {
+                    color: $color_dropdown_base;
+                }
+            }
+
+            .selection-icon {
+                color: $color_dropdown_text;
+                position: relative;
+                top: -25px;
+                right: 3px;
+            }
+        }
+    }
+
+    &.is-active {
+        border-radius: 5px 5px 0 0;
+        background-color: $color_dropdown_base;
+        box-shadow: none;
+        border-bottom: none;
+        color: $color_dropdown_bg;
+        &:after {
+            border-color: $color_dropdown_caret_active transparent;
+        }
+
+        .zs-dropdown {
+            max-height: 400px;
+            @include make_shadow();
+        }
+    }
+
+
+}
