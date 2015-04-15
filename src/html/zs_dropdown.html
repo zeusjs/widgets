@@ -1,0 +1,18 @@
+<div ng-if="fieldLabel">
+    <label>{{ fieldLabel }}</label>
+</div>
+<div class="zs-dropdown-wrapper"
+    ng-class="{'is-active': isOpen == true}">
+    <div ng-show="selectionCount == 0 || multiSelect">{{defaultLabel}}</div>
+    <div ng-show="selectionCount > 0 && !multiSelect">{{selectedItem}}</div>
+    <ul class="zs-dropdown">
+        <li ng-repeat="item in items"
+            ng-click="itemClick( item )">
+            <a>{{item.textValue}}</a>
+            <span class="pull-right selection-icon"
+                ng-show="item.isChecked">
+                &#10003
+            </span>
+        </li>
+    </ul>
+</div>

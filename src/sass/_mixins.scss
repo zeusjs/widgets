@@ -43,3 +43,11 @@
 @mixin make_shadow() {
     box-shadow: 0px 1px 3px 2px $color_panel_shadow;
 }
+
+//Mixin to show ellipsis
+@mixin show_ellipsis($width) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: $width;
+    white-space: nowrap;
+}
