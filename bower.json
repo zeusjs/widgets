@@ -1,6 +1,34 @@
 {
   "name": "zeus-widgets",
   "version": "0.0.1",
+  "main": [
+    "dist/js/zeus-widgets.js",
+    "dist/js/zeus-widgets.templates.js",
+    "dist/css/zeus-widgets.css"
+  ],
+  "ignore": [
+    "externs/libs",
+    "src",
+    "test",
+    ".editorconfig",
+    ".gitignore",
+    ".jscsrc",
+    ".jshintrc",
+    ".travis.yml",
+    "Gruntfile.js",
+    "README.md",
+    "bower.json",
+    "karma.conf.js",
+    "package.json",
+    "publish.sh"
+  ],
+  "license": "MIT",
+  "authors": [
+    "Amey Sakhadeo",
+    "Rohit Raheja",
+    "Vishnudas Kulkarni"
+  ],
+  "homepage": "http://zeusjs.github.io/widgets",
   "dependencies": {
     "angular": "1.3.3",
     "jquery": "^1.9",
