@@ -1,7 +1,7 @@
 /*!
  * Copyright (C) 2015, Symantec Corporation
  * All rights reserved.
- * zeus-widgets v0.0.1
+ * zeus-widgets v0.1.0
  */
 /**
  * Copyright 2015, Symantec Corporation
