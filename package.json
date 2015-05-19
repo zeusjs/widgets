@@ -1,8 +1,7 @@
 {
   "name": "zeus-widgets",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A set of input widgets and other UI components built using AngularJS",
-  "main": "dist/index.js",
   "scripts": {
     "test": "grunt test",
     "deploy": "grunt build && ./publish.sh"
