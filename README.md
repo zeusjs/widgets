@@ -4,9 +4,16 @@
 ---
 A set of input widgets and other UI components built using AngularJS
 
+## Installation
+zeus-widgets is available via [Bower](http://bower.io/)
 
-Documentation
---
-The complete API documentation can be found [ here](http://zeusjs.github.io/widgets).
+```shell
+ bower install zeus-widgets --save
+
+```
+
+## Documentation
+
+The complete API documentation can be found [here](http://zeusjs.github.io/widgets).
 
 License: MIT
