@@ -264,9 +264,9 @@ module.exports = function ( grunt ) {
 
         coveralls: {
             options: {
-                debug: true,
+                debug: false,
                 coverageDir: '.gen/coverage',
-                dryRun: true,
+                dryRun: false,
                 force: true,
                 recursive: true
             }
