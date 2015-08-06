@@ -33,22 +33,22 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree
  */
-@-webkit-keyframes zs_async_btn_spinner_dots {
+@-webkit-keyframes zs_async_btn_spinner_dots
+{
   0%, 80%, 100% {
     -webkit-transform: scale(0);
-    transform: scale(0); }
-
+            transform: scale(0); }
   40% {
     -webkit-transform: scale(1);
-    transform: scale(1); } }
-@keyframes zs_async_btn_spinner_dots {
+            transform: scale(1); } }
+@keyframes zs_async_btn_spinner_dots
+{
   0%, 80%, 100% {
     -webkit-transform: scale(0);
-    transform: scale(0); }
-
+            transform: scale(0); }
   40% {
     -webkit-transform: scale(1);
-    transform: scale(1); } }
+            transform: scale(1); } }
 
 /**
  * Copyright 2015, Symantec Corporation
@@ -59,9 +59,11 @@
  */
 .btn-async.is-loading {
   cursor: wait; }
-  .btn-async.is-loading .btn-async-spinner {
+  .btn-async.is-loading
+.btn-async-spinner {
     display: block; }
-  .btn-async.is-loading .btn-async-text {
+  .btn-async.is-loading
+.btn-async-text {
     display: none; }
 
 .btn-async-spinner {
@@ -78,31 +80,36 @@
     border-radius: 100%;
     display: inline-block;
     -webkit-animation: zs_async_btn_spinner_dots 1.4s infinite ease-in-out;
-    animation: zs_async_btn_spinner_dots 1.4s infinite ease-in-out;
+            animation: zs_async_btn_spinner_dots 1.4s infinite ease-in-out;
     -webkit-animation-fill-mode: both;
-    animation-fill-mode: both; }
+            animation-fill-mode: both; }
     .btn-async-spinner > div:not(:first-child) {
       margin-left: 5px; }
   .btn-async-spinner .bounce1 {
     -webkit-animation-delay: -0.32s;
-    animation-delay: -0.32s; }
+            animation-delay: -0.32s; }
   .btn-async-spinner .bounce2 {
     -webkit-animation-delay: -0.16s;
-    animation-delay: -0.16s; }
+            animation-delay: -0.16s; }
 
-.btn-danger .btn-async-spinner > div {
+.btn-danger .btn-async-spinner
+> div {
   border-color: #b9151b; }
 
-.btn-warning .btn-async-spinner > div {
+.btn-warning .btn-async-spinner
+> div {
   border-color: #d39e00; }
 
-.btn-success .btn-async-spinner > div {
+.btn-success .btn-async-spinner
+> div {
   border-color: #1b721a; }
 
-.btn-primary .btn-async-spinner > div {
+.btn-primary .btn-async-spinner
+> div {
   border-color: #244ffb; }
 
-.btn-info .btn-async-spinner > div {
+.btn-info .btn-async-spinner
+> div {
   border-color: #244ffb; }
 
 /**
@@ -168,15 +175,18 @@
         border-right: 1px solid #bbd0e0; }
   .radio-tab-container .radio-tab-content-container {
     background-color: white; }
-    .radio-tab-container .radio-tab-content-container .radio-tab-content {
+    .radio-tab-container .radio-tab-content-container
+.radio-tab-content {
       padding: 20px; }
 
 @media screen and (min-width: 768px) {
-  .radio-tabs-row li.radio-tab-option {
+  .radio-tabs-row
+li.radio-tab-option {
     width: 5000px; } }
 
 @media screen and (max-width: 767px) {
-  .radio-tab-container .close-content {
+  .radio-tab-container
+.close-content {
     display: block; }
   .radio-tab-container .radio-tab-options {
     display: block; }
@@ -184,9 +194,11 @@
       display: block;
       margin: 0px;
       padding: 0px; }
-      .radio-tab-container .radio-tab-options ul.radio-tabs-row.has-selection li.radio-tab-option {
+      .radio-tab-container .radio-tab-options ul.radio-tabs-row.has-selection
+li.radio-tab-option {
         display: none; }
-        .radio-tab-container .radio-tab-options ul.radio-tabs-row.has-selection li.radio-tab-option.is-selected {
+        .radio-tab-container .radio-tab-options ul.radio-tabs-row.has-selection
+li.radio-tab-option.is-selected {
           display: block;
           width: 100%;
           border-bottom: none; }
@@ -223,9 +235,9 @@
     cursor: pointer; }
     .zs-checkbox label:after {
       -webkit-transform: rotate(-45deg);
-      transform: rotate(-45deg);
+              transform: rotate(-45deg);
       -webkit-transform-origin: left, top;
-      transform-origin: left, top;
+              transform-origin: left, top;
       content: '';
       display: block;
       position: absolute;
@@ -293,41 +305,51 @@
   position: relative;
   z-index: 1001;
   -webkit-perspective: 1000;
-  perspective: 1000; }
-  .zs-flip-card .face-container {
+          perspective: 1000; }
+  .zs-flip-card
+.face-container {
     transition: all 0.4s;
     -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d; }
-    .zs-flip-card .face-container.is-flipped {
+            transform-style: preserve-3d; }
+    .zs-flip-card
+.face-container.is-flipped {
       -webkit-transform: rotateY(180deg);
-      transform: rotateY(180deg); }
-  .zs-flip-card .face {
+              transform: rotateY(180deg); }
+  .zs-flip-card
+.face {
     position: absolute;
     padding: 10px;
     width: 100%;
     background-color: #FFF;
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+            backface-visibility: hidden;
     position: absolute;
     top: 0;
     left: 0;
     box-shadow: 0px 1px 3px 2px #f2f2f2; }
-  .zs-flip-card .header {
+  .zs-flip-card
+.header {
     margin-bottom: 10px; }
-    .zs-flip-card .header h6 {
+    .zs-flip-card
+.header
+h6 {
       padding: 0px;
       margin: 0px; }
-    .zs-flip-card .header .flip-btn {
+    .zs-flip-card
+.header
+.flip-btn {
       font-size: 0.9em;
       cursor: pointer;
       color: #999; }
-  .zs-flip-card .face-front {
+  .zs-flip-card
+.face-front {
     z-index: 1000;
     -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg); }
-  .zs-flip-card .face-back {
+            transform: rotateY(0deg); }
+  .zs-flip-card
+.face-back {
     -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg); }
+            transform: rotateY(180deg); }
 
 /**
  * Copyright 2015, Symantec Corporation
@@ -344,7 +366,7 @@
   text-align: left;
   padding: 3px 0px 5px 5px;
   background-color: #FFF;
-  transition: all .2s ease-in; }
+  transition: all 0.2s ease-in; }
   .simple-toggle-wrap.btn {
     border-radius: 1em; }
   .simple-toggle-wrap.state-off {
@@ -355,7 +377,8 @@
   .simple-toggle-wrap.state-on {
     background: #FFF;
     border-style: solid; }
-  .simple-toggle-wrap .toggle-icon {
+  .simple-toggle-wrap
+.toggle-icon {
     color: #FFF;
     float: left;
     border-radius: 100%;
@@ -363,7 +386,7 @@
     border: 1px solid #FFF;
     padding: 3px;
     font-size: 0.8em;
-    transition: background-color .2s ease-in;
+    transition: background-color 0.2s ease-in;
     margin-right: 5px;
     position: relative;
     top: 1px;
@@ -388,26 +411,33 @@
   margin-bottom: 10px;
   background-color: #FFF;
   border-radius: 0px 1px 3px 2px #e2ecf0; }
-  .card .card-head {
+  .card
+.card-head {
     padding: 2px 5px 2px 2px;
     background-color: #f0f0f0;
     border-top-right-radius: #d6d6d6;
     border-top-left-radius: #d6d6d6;
     border-bottom: 1px solid #d6d6d6; }
-    .card .card-head h4 {
+    .card
+.card-head
+h4 {
       font-size: 1.05em;
       font-weight: normal;
       display: inline-block;
       color: #333;
       padding: 0px 5px 0px 5px; }
-    .card .card-head .icon {
+    .card
+.card-head
+.icon {
       font-size: 0.9em;
       display: inline-block;
       color: #999;
       padding: 0px 0px 0px 5px; }
-  .card .card-body {
+  .card
+.card-body {
     padding: 10px; }
-  .card.no-head .card-head {
+  .card.no-head
+.card-head {
     background-color: transparent;
     border-bottom: 0px; }
 
@@ -416,19 +446,34 @@
 
 .card.has-table {
   padding: 0px; }
-  .card.has-table .card-body {
+  .card.has-table
+.card-body {
     padding: 0px;
     min-height: 100px; }
-    .card.has-table .card-body table {
+    .card.has-table
+.card-body
+table {
       margin: 0px; }
-      .card.has-table .card-body table thead {
+      .card.has-table
+.card-body
+table
+thead {
         background-color: #f0f0f0;
         border: none;
         border-bottom: 1px solid #d6d6d6; }
-        .card.has-table .card-body table thead th {
+        .card.has-table
+.card-body
+table
+thead
+th {
           font-weight: 400;
           color: #666; }
-      .card.has-table .card-body table tbody tr td.table-cell-graph {
+      .card.has-table
+.card-body
+table
+tbody
+tr
+td.table-cell-graph {
         padding: 10px;
         text-align: right;
         width: 70px; }
@@ -441,119 +486,145 @@
   display: flex;
   display: -ms-flex-box;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-flex-wrap: no-wrap;
-  -ms-flex-wrap: no-wrap;
-  flex-wrap: no-wrap; }
-  .table-fragment-header .fragment-action-group {
+      -ms-flex-wrap: no-wrap;
+          flex-wrap: no-wrap; }
+  .table-fragment-header
+.fragment-action-group {
     -webkit-flex-basis: 16px;
-    -ms-flex-preferred-size: 16px;
-    flex-basis: 16px;
+        -ms-flex-preferred-size: 16px;
+            flex-basis: 16px;
     -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
     -webkit-order: 32767;
-    order: 32767;
+            order: 32767;
     -ms-flex-order: 32767; }
-    .table-fragment-header .fragment-action-group .fragment-action {
+    .table-fragment-header
+.fragment-action-group .fragment-action {
       background-color: transparent;
       border: none;
       font-size: 1.5em;
       color: #999; }
-    .table-fragment-header .fragment-action-group .column-container {
+    .table-fragment-header
+.fragment-action-group .column-container {
       width: 180px; }
-  .table-fragment-header .table-toolbar-item {
+  .table-fragment-header
+.table-toolbar-item {
     -webkit-flex-basis: auto;
-    -ms-flex-preferred-size: auto;
-    flex-basis: auto;
+        -ms-flex-preferred-size: auto;
+            flex-basis: auto;
     margin-right: 5px;
     margin-top: 5px;
     -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
     vertical-align: bottom; }
-  .table-fragment-header img {
+  .table-fragment-header
+img {
     -webkit-flex-basis: 28px;
-    -ms-flex-preferred-size: 28px;
-    flex-basis: 28px;
+        -ms-flex-preferred-size: 28px;
+            flex-basis: 28px;
     margin-right: 5px;
     margin-top: 5px;
     -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
     vertical-align: bottom;
     height: 28px;
     width: 28px; }
-  .table-fragment-header h3 {
+  .table-fragment-header
+h3 {
     -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center; }
+        -ms-flex-item-align: center;
+            align-self: center; }
   .table-fragment-header .btn-group.open .dropdown-toggle.fragment-action {
     box-shadow: none;
     -webkit-box-shadow: none; }
 
-.table-fragment-wrap.hideColumn1 .card.has-table.table-fragment thead th:nth-child(1), .table-fragment-wrap.hideColumn1 .card.has-table.table-fragment tbody td:nth-child(1) {
+.table-fragment-wrap.hideColumn1 .card.has-table.table-fragment thead th:nth-child(1),
+.table-fragment-wrap.hideColumn1 .card.has-table.table-fragment tbody td:nth-child(1) {
   display: none; }
 
-.table-fragment-wrap.hideColumn2 .card.has-table.table-fragment thead th:nth-child(2), .table-fragment-wrap.hideColumn2 .card.has-table.table-fragment tbody td:nth-child(2) {
+.table-fragment-wrap.hideColumn2 .card.has-table.table-fragment thead th:nth-child(2),
+.table-fragment-wrap.hideColumn2 .card.has-table.table-fragment tbody td:nth-child(2) {
   display: none; }
 
-.table-fragment-wrap.hideColumn3 .card.has-table.table-fragment thead th:nth-child(3), .table-fragment-wrap.hideColumn3 .card.has-table.table-fragment tbody td:nth-child(3) {
+.table-fragment-wrap.hideColumn3 .card.has-table.table-fragment thead th:nth-child(3),
+.table-fragment-wrap.hideColumn3 .card.has-table.table-fragment tbody td:nth-child(3) {
   display: none; }
 
-.table-fragment-wrap.hideColumn4 .card.has-table.table-fragment thead th:nth-child(4), .table-fragment-wrap.hideColumn4 .card.has-table.table-fragment tbody td:nth-child(4) {
+.table-fragment-wrap.hideColumn4 .card.has-table.table-fragment thead th:nth-child(4),
+.table-fragment-wrap.hideColumn4 .card.has-table.table-fragment tbody td:nth-child(4) {
   display: none; }
 
-.table-fragment-wrap.hideColumn5 .card.has-table.table-fragment thead th:nth-child(5), .table-fragment-wrap.hideColumn5 .card.has-table.table-fragment tbody td:nth-child(5) {
+.table-fragment-wrap.hideColumn5 .card.has-table.table-fragment thead th:nth-child(5),
+.table-fragment-wrap.hideColumn5 .card.has-table.table-fragment tbody td:nth-child(5) {
   display: none; }
 
-.table-fragment-wrap.hideColumn6 .card.has-table.table-fragment thead th:nth-child(6), .table-fragment-wrap.hideColumn6 .card.has-table.table-fragment tbody td:nth-child(6) {
+.table-fragment-wrap.hideColumn6 .card.has-table.table-fragment thead th:nth-child(6),
+.table-fragment-wrap.hideColumn6 .card.has-table.table-fragment tbody td:nth-child(6) {
   display: none; }
 
-.table-fragment-wrap.hideColumn7 .card.has-table.table-fragment thead th:nth-child(7), .table-fragment-wrap.hideColumn7 .card.has-table.table-fragment tbody td:nth-child(7) {
+.table-fragment-wrap.hideColumn7 .card.has-table.table-fragment thead th:nth-child(7),
+.table-fragment-wrap.hideColumn7 .card.has-table.table-fragment tbody td:nth-child(7) {
   display: none; }
 
-.table-fragment-wrap.hideColumn8 .card.has-table.table-fragment thead th:nth-child(8), .table-fragment-wrap.hideColumn8 .card.has-table.table-fragment tbody td:nth-child(8) {
+.table-fragment-wrap.hideColumn8 .card.has-table.table-fragment thead th:nth-child(8),
+.table-fragment-wrap.hideColumn8 .card.has-table.table-fragment tbody td:nth-child(8) {
   display: none; }
 
-.table-fragment-wrap.hideColumn9 .card.has-table.table-fragment thead th:nth-child(9), .table-fragment-wrap.hideColumn9 .card.has-table.table-fragment tbody td:nth-child(9) {
+.table-fragment-wrap.hideColumn9 .card.has-table.table-fragment thead th:nth-child(9),
+.table-fragment-wrap.hideColumn9 .card.has-table.table-fragment tbody td:nth-child(9) {
   display: none; }
 
-.table-fragment-wrap.hideColumn10 .card.has-table.table-fragment thead th:nth-child(10), .table-fragment-wrap.hideColumn10 .card.has-table.table-fragment tbody td:nth-child(10) {
+.table-fragment-wrap.hideColumn10 .card.has-table.table-fragment thead th:nth-child(10),
+.table-fragment-wrap.hideColumn10 .card.has-table.table-fragment tbody td:nth-child(10) {
   display: none; }
 
-.table-fragment-wrap.hideColumn11 .card.has-table.table-fragment thead th:nth-child(11), .table-fragment-wrap.hideColumn11 .card.has-table.table-fragment tbody td:nth-child(11) {
+.table-fragment-wrap.hideColumn11 .card.has-table.table-fragment thead th:nth-child(11),
+.table-fragment-wrap.hideColumn11 .card.has-table.table-fragment tbody td:nth-child(11) {
   display: none; }
 
-.table-fragment-wrap.hideColumn12 .card.has-table.table-fragment thead th:nth-child(12), .table-fragment-wrap.hideColumn12 .card.has-table.table-fragment tbody td:nth-child(12) {
+.table-fragment-wrap.hideColumn12 .card.has-table.table-fragment thead th:nth-child(12),
+.table-fragment-wrap.hideColumn12 .card.has-table.table-fragment tbody td:nth-child(12) {
   display: none; }
 
-.table-fragment-wrap.hideColumn13 .card.has-table.table-fragment thead th:nth-child(13), .table-fragment-wrap.hideColumn13 .card.has-table.table-fragment tbody td:nth-child(13) {
+.table-fragment-wrap.hideColumn13 .card.has-table.table-fragment thead th:nth-child(13),
+.table-fragment-wrap.hideColumn13 .card.has-table.table-fragment tbody td:nth-child(13) {
   display: none; }
 
-.table-fragment-wrap.hideColumn14 .card.has-table.table-fragment thead th:nth-child(14), .table-fragment-wrap.hideColumn14 .card.has-table.table-fragment tbody td:nth-child(14) {
+.table-fragment-wrap.hideColumn14 .card.has-table.table-fragment thead th:nth-child(14),
+.table-fragment-wrap.hideColumn14 .card.has-table.table-fragment tbody td:nth-child(14) {
   display: none; }
 
-.table-fragment-wrap.hideColumn15 .card.has-table.table-fragment thead th:nth-child(15), .table-fragment-wrap.hideColumn15 .card.has-table.table-fragment tbody td:nth-child(15) {
+.table-fragment-wrap.hideColumn15 .card.has-table.table-fragment thead th:nth-child(15),
+.table-fragment-wrap.hideColumn15 .card.has-table.table-fragment tbody td:nth-child(15) {
   display: none; }
 
-.table-fragment-wrap.hideColumn16 .card.has-table.table-fragment thead th:nth-child(16), .table-fragment-wrap.hideColumn16 .card.has-table.table-fragment tbody td:nth-child(16) {
+.table-fragment-wrap.hideColumn16 .card.has-table.table-fragment thead th:nth-child(16),
+.table-fragment-wrap.hideColumn16 .card.has-table.table-fragment tbody td:nth-child(16) {
   display: none; }
 
-.table-fragment-wrap.hideColumn17 .card.has-table.table-fragment thead th:nth-child(17), .table-fragment-wrap.hideColumn17 .card.has-table.table-fragment tbody td:nth-child(17) {
+.table-fragment-wrap.hideColumn17 .card.has-table.table-fragment thead th:nth-child(17),
+.table-fragment-wrap.hideColumn17 .card.has-table.table-fragment tbody td:nth-child(17) {
   display: none; }
 
-.table-fragment-wrap.hideColumn18 .card.has-table.table-fragment thead th:nth-child(18), .table-fragment-wrap.hideColumn18 .card.has-table.table-fragment tbody td:nth-child(18) {
+.table-fragment-wrap.hideColumn18 .card.has-table.table-fragment thead th:nth-child(18),
+.table-fragment-wrap.hideColumn18 .card.has-table.table-fragment tbody td:nth-child(18) {
   display: none; }
 
-.table-fragment-wrap.hideColumn19 .card.has-table.table-fragment thead th:nth-child(19), .table-fragment-wrap.hideColumn19 .card.has-table.table-fragment tbody td:nth-child(19) {
+.table-fragment-wrap.hideColumn19 .card.has-table.table-fragment thead th:nth-child(19),
+.table-fragment-wrap.hideColumn19 .card.has-table.table-fragment tbody td:nth-child(19) {
   display: none; }
 
-.table-fragment-wrap.hideColumn20 .card.has-table.table-fragment thead th:nth-child(20), .table-fragment-wrap.hideColumn20 .card.has-table.table-fragment tbody td:nth-child(20) {
+.table-fragment-wrap.hideColumn20 .card.has-table.table-fragment thead th:nth-child(20),
+.table-fragment-wrap.hideColumn20 .card.has-table.table-fragment tbody td:nth-child(20) {
   display: none; }
 
 .table-fragment .fragment-action {
@@ -561,19 +632,26 @@
   border: none;
   font-size: 20px;
   padding-right: 15px; }
-.table-fragment.no-header table, .table-fragment.no-header table thead, .table-fragment.no-header table thead tr {
+
+.table-fragment.no-header table, .table-fragment.no-header table thead, .table-fragment.no-header
+table thead tr {
   border-top-right-radius: #d6d6d6;
   border-top-left-radius: #d6d6d6; }
+
 .table-fragment .btn-group.open .dropdown-toggle.fragment-action {
   box-shadow: none;
   -webkit-box-shadow: none; }
+
 .table-fragment thead th.sort-active:hover {
   cursor: pointer;
   background-color: #e6e6e6; }
+
 .table-fragment tbody tr:nth-child(even) {
   background-color: #fcfcfc; }
+
 .table-fragment .mobileColumnHeader {
   display: none; }
+
 .table-fragment .loadMore {
   min-height: 30px;
   border-top: 1px solid #d6d6d6;
@@ -584,10 +662,13 @@
   .table-fragment .loadMore .pagination {
     margin: 0;
     padding-right: 10px; }
+
 .table-fragment .showCheckIcon {
   float: right; }
+
 .table-fragment .no-record-message {
   padding: 10px; }
+
 .table-fragment .progress {
   margin-bottom: 0px;
   border-radius: 5px;
@@ -651,47 +732,82 @@
   table.responsive-table {
     display: block;
     padding: 0px 0px 10px 0px; }
-    table.responsive-table thead {
+    table.responsive-table
+thead {
       display: none; }
-    table.responsive-table tbody {
+    table.responsive-table
+tbody {
       width: 100%;
       display: block; }
-      table.responsive-table tbody tr {
+      table.responsive-table
+tbody
+tr {
         display: block;
         border: none;
         position: relative;
         background-color: transparent;
         padding: 0px 80px 10px 0px; }
-        table.responsive-table tbody tr:not(:last-child) {
+        table.responsive-table
+tbody
+tr:not(:last-child) {
           border-bottom: 1px solid #f0f0f0; }
-        table.responsive-table tbody tr td {
+        table.responsive-table
+tbody
+tr
+td {
           background-color: transparent;
           display: block;
           border: none;
           margin: 0px;
           padding: 10px 0px 0px 10px; }
-          table.responsive-table tbody tr td.primary-attr {
+          table.responsive-table
+tbody
+tr
+td.primary-attr {
             font-weight: 400;
             font-size: 1.01em;
             display: block;
             width: 100%; }
-            table.responsive-table tbody tr td.primary-attr .mobileColumnHeader {
+            table.responsive-table
+tbody
+tr
+td.primary-attr
+.mobileColumnHeader {
               display: none; }
-          table.responsive-table tbody tr td.secondary-attr {
+          table.responsive-table
+tbody
+tr
+td.secondary-attr {
             display: block; }
-            table.responsive-table tbody tr td.secondary-attr .progress {
+            table.responsive-table
+tbody
+tr
+td.secondary-attr
+.progress {
               height: 10px; }
-          table.responsive-table tbody tr td.extra-attr {
+          table.responsive-table
+tbody
+tr
+td.extra-attr {
             display: block;
             color: #666;
             font-size: 0.9em; }
-            table.responsive-table tbody tr td.extra-attr:last-child::after {
+            table.responsive-table
+tbody
+tr
+td.extra-attr:last-child::after {
               content: ""; }
-            table.responsive-table tbody tr td.extra-attr::after {
+            table.responsive-table
+tbody
+tr
+td.extra-attr::after {
               display: inline;
               content: "";
               margin: 0px; }
-          table.responsive-table tbody tr td.table-cell-graph {
+          table.responsive-table
+tbody
+tr
+td.table-cell-graph {
             display: block;
             position: absolute;
             right: 10px;
