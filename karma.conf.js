@@ -98,13 +98,14 @@ module.exports = function ( config ) {
 
         // the default configuration
         junitReporter: {
+            outputDir: '.gen',
             outputFile: 'test-results.xml',
             suite: ''
         },
 
         coverageReporter: {
             type: 'lcov',
-            dir: '.coverage/'
+            dir: '.gen/coverage'
         }
     } );
 };
