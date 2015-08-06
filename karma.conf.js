@@ -80,7 +80,7 @@ module.exports = function ( config ) {
         preprocessors: {
 
             'src/js/*js': [ 'coverage' ],
-            'test/fixtures/**/*.json': [ 'json2js' ],
+            'test/fixtures/**/*.json': [ 'ng-json2js' ],
             'src/html/*.html': [ 'ng-html2js' ],
             'test/mock_views/*.html': [ 'html2js' ]
         },

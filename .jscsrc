@@ -9,7 +9,8 @@
     "disallowMultipleLineBreaks": null,
 
     "requireCamelCaseOrUpperCaseIdentifiers": null,
-
+    "requirePaddingNewLinesBeforeLineComments": null,
+    "requireCapitalizedComments": null,
 
     "requireSpacesInFunctionExpression": {
         "beforeOpeningRoundBrace": true,
