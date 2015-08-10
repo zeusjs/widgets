@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "0.10"
+  - '0.10'
 before_script:
   - npm install --quiet -g grunt-cli karma
   - npm install
@@ -9,4 +9,5 @@ after_success: ./publish.sh
 env:
   global:
     - GH_REF: github.com/zeusjs/widgets.git
-    - secure: YVMS1sNKwddVBZ/DAKXynmSCbA1TwlmF8dQ80gYx6KDRxQEPGWpFqrSJEd5s3/YeeKWk03yQCYGTmqac5i1xTte3Bji2lTe9tv5c+qf4OXVDNE/t/yCdSJPJa/a25Jr1yMBvusPlmAWnooR0HOWK+rkhK3FR1NedWUSJNm79fww=
+    - secure: k/m/qOpttm2B/rJXIXjo2FWWjw/cJH6KOd0k5HRWkenKOgYuaR+9TT2xUBm8eSi/Wg0Hj8jBu8Zq3if+wzs4Azy3ssZBTeDIueu2ZkRiC+1pHfnYUggxGf3T5NFDwSMfKDMh4kVMYiyRZS+B8Sv+Sl69xlJr0RT7Kw7SBiCIb1s=
+    - secure: eG/cQMzxGG5DDHqhaAG1D/S/f8Y/vt+M6IwNOCBn/9b0xeD2qqO6IMDsY7oXcsM+K5awbLaErHH8sQpLsBRJxQow8ZK1so+s4Eid7o2k/RzyurR3TATNFRypf0QXOVeyHhWItjDnwCSBC2Byrq8xCMLXo2qNVTQ/ovE7twdDhXs=
