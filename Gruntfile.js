@@ -50,6 +50,7 @@ module.exports = function ( grunt ) {
                         '.tmp',
                         'dist/*',
                         'docs',
+                        '.gen/*',
                         'publish_docs',
                         '!dist/.git*'
                     ]
@@ -325,8 +326,8 @@ module.exports = function ( grunt ) {
 
     grunt.registerTask( 'build', [
         'lint',
-        'karma',
         'clean',
+        'karma',
         'sass',
         'autoprefixer',
         'html2js:main',
