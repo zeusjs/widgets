@@ -4,9 +4,7 @@
     </a>
 </p>
 # zeus-widgets
-[![Build Status](https://travis-ci.org/zeusjs/widgets.svg)](https://travis-ci.org/zeusjs/widgets)
-[![devDependency Status](https://david-dm.org/zeusjs/widgets/dev-status.svg)](https://david-dm.org/zeusjs/widgets#info=devDependencies)
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Build Status](https://travis-ci.org/zeusjs/widgets.svg)](https://travis-ci.org/zeusjs/widgets) [![Coverage Status](https://coveralls.io/repos/zeusjs/widgets/badge.svg?branch=master&service=github)](https://coveralls.io/github/zeusjs/widgets?branch=master) [![Code Climate](https://codeclimate.com/github/zeusjs/widgets/badges/gpa.svg)](https://codeclimate.com/github/zeusjs/widgets) [![devDependency Status](https://david-dm.org/zeusjs/widgets/dev-status.svg)](https://david-dm.org/zeusjs/widgets#info=devDependencies) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 
 A set of input widgets and other UI components built using AngularJS
