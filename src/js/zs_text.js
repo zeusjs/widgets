@@ -165,36 +165,37 @@ angular.module( 'zeus.widgets' )
                             indicateError( validationResult.msg );
                             break;
                     }
-                }
+                } else {
+                    // or indicates validation problem through a
+                    // 1. Promise that REJECTS with an object of format { level:, msg:}
+                    // 2. Promise that RESOLVES with a string which be taken as validation error
+                    validationResult.then( function ( response ) {
 
-                // or indicates validation problem through a
-                // 1. Promise that REJECTS with an object of format { level:, msg:}
-                // 2. Promise that RESOLVES with a string which be taken as validation error
-                validationResult.then( function ( response ) {
-
-                    if ( angular.isString( response ) ) {
-                        indicateError( response );
-                        return;
-                    }
-                    indicateSuccess();
-
-                }, function ( response ) {
-
-                    if ( angular.isString( response ) ) {
-                        indicateError( response );
-                        return;
-                    } else {
-                        switch ( response.level ) {
-                            case 'warning':
-                                indicateWarning( response.msg );
-                                break;
-
-                            case 'error':
-                                indicateError( response.msg );
-                                break;
+                        if ( angular.isString( response ) ) {
+                            indicateError( response );
+                            return;
                         }
-                    }
-                } );
+                        indicateSuccess();
+
+                    }, function ( response ) {
+
+                        if ( angular.isString( response ) ) {
+                            indicateError( response );
+                            return;
+                        } else {
+
+                            switch ( response.level ) {
+                                case 'warning':
+                                    indicateWarning( response.msg );
+                                    break;
+
+                                case 'error':
+                                    indicateError( response.msg );
+                                    break;
+                            }
+                        }
+                    } );
+                }
 
             };
         };

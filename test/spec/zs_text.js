@@ -8,7 +8,8 @@ describe( 'Directive: zsText', function () {
 
     var element,
         scope, domStr,
-        findInputEl, defered;
+        findInputEl, defered,
+        innerDefered;
 
     findInputEl = function ( el ) {
         return el.find( 'input' );
@@ -207,6 +208,68 @@ describe( 'Directive: zsText', function () {
             } );
         } );
 
+        describe( 'returing error as a object', function () {
+
+            beforeEach( function () {
+                scope.validationCallback =
+                    jasmine.createSpy( 'validationCallback' )
+                        .and.callFake( function () {
+                            return {
+                                level: 'error',
+                                msg: 'Got an error string'
+                            };
+                        } );
+            } );
+
+            it( 'should show error icon', function () {
+                var input = findInputEl( element ),
+                    icon = element.find( '[ data-role="icon"]' );
+
+                input.val( 'fubar' );
+                input.blur();
+
+                expect( icon.attr( 'class' ) ).toMatch( /fa-times/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-check/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-exclamation-triangle/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-spin/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /text-muted/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-circle-o-notch/ );
+
+                expect( scope.isMyValueInvalid ).toBe( true );
+            } );
+        } );
+
+        describe( 'returing warning as a object', function () {
+
+            beforeEach( function () {
+                scope.validationCallback =
+                    jasmine.createSpy( 'validationCallback' )
+                        .and.callFake( function () {
+                            return {
+                                level: 'warning',
+                                msg: 'Got an error string'
+                            };
+                        } );
+            } );
+
+            it( 'should show error icon', function () {
+                var input = findInputEl( element ),
+                    icon = element.find( '[ data-role="icon"]' );
+
+                input.val( 'fubar' );
+                input.blur();
+
+                expect( icon.attr( 'class' ) ).toMatch( /fa-exclamation-triangle/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-times/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-check/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-spin/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /text-muted/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-circle-o-notch/ );
+
+                expect( scope.isMyValueInvalid ).toBe( false );
+            } );
+        } );
+
         describe( 'returning as a promise', function () {
 
             beforeEach( inject( function ( $q ) {
@@ -216,6 +279,8 @@ describe( 'Directive: zsText', function () {
                             defered = $q.defer();
                             return defered.promise;
                         } );
+
+                innerDefered = $q.defer();
             } ) );
 
             it( 'should show success when promise returns nothing', function () {
@@ -302,6 +367,35 @@ describe( 'Directive: zsText', function () {
                 expect( scope.isMyValueInvalid ).toBe( true );
             } );
 
+            it( 'should show error when promise rejects with level `error` and promise msg',
+                function () {
+
+                var input = findInputEl( element ),
+                    icon = element.find( '[ data-role="icon"]' ),
+                    promObj = innerDefered.promise;
+
+                input.val( 'fubar' );
+                input.blur();
+
+                defered.reject( {
+                    level: 'error',
+                    msg: promObj
+                } );
+
+                innerDefered.resolve( 'Got an error string' );
+
+                scope.$apply();
+
+                expect( icon.attr( 'class' ) ).toMatch( /fa-times/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-check/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-exclamation-triangle/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-spin/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /text-muted/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-circle-o-notch/ );
+
+                expect( scope.isMyValueInvalid ).toBe( true );
+            } );
+
             it( 'should show warning msg when promise rejects with level `warning`', function () {
                 var input = findInputEl( element ),
                     icon = element.find( '[ data-role="icon"]' );
@@ -313,6 +407,34 @@ describe( 'Directive: zsText', function () {
                     level: 'warning',
                     msg: 'Got an error string'
                 } );
+                scope.$apply();
+
+                expect( icon.attr( 'class' ) ).toMatch( /fa-exclamation-triangle/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-times/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-check/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-spin/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /text-muted/ );
+                expect( icon.attr( 'class' ) ).not.toMatch( /fa-circle-o-notch/ );
+
+                expect( scope.isMyValueInvalid ).toBe( false );
+            } );
+
+            it( 'should show warning msg when promise rejects with level `warning` and promise msg',
+                function () {
+                var input = findInputEl( element ),
+                    icon = element.find( '[ data-role="icon"]' ),
+                    promObj = innerDefered.promise;
+
+                input.val( 'fubar' );
+                input.blur();
+
+                defered.reject( {
+                    level: 'warning',
+                    msg: promObj
+                } );
+
+                innerDefered.resolve( 'Got an error string' );
+
                 scope.$apply();
 
                 expect( icon.attr( 'class' ) ).toMatch( /fa-exclamation-triangle/ );
