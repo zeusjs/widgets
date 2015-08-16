@@ -1,0 +1,51 @@
+<a href="https://github.com/zeusjs/widgets/edit/master/src/js/zs_flip_card.js" class="improve-docs"><i class="icon-edit"> </i>Improve this doc</a><a href="https://github.com/zeusjs/widgets/blob/926ac8f/src/js/zs_flip_card.js#L51" class="view-source"><i class="icon-eye-open"> </i>View source</a><h1><code ng:non-bindable="">zsFlipCard</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">zeus.widgets</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;zs-flip-card
+       [hide-flip-button="{boolean}"]
+       [active-face="{string}"]&gt;
+&lt;/zs-flip-card&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>hideFlipButton <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zsflipcard-page"><p>Explicitly hide flipping button.
+Flips can only be done programmatically.</p>
+</div></td></tr><tr><td>activeFace <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zsflipcard-page"><p>Face that is currently shown or to be shown. Two way bound.</p>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="zeus-widgets-directive-page zeus-widgets-directive-zsflipcard-page"><h4 id="example_source">Source</h4>
+<div source-edit="zeus.widgets" source-edit-deps="angular.js" source-edit-html="index.html-2" source-edit-css="" source-edit-js="" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-2" ng-html-wrap-loaded="zeus.widgets angular.js"></pre>
+<script type="text/ng-template" id="index.html-2">
+    <div style="height:300px">
+    <div class="row">
+    <zs-flip-card class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div data-role="front-face" data-heading="Flip Card Demo">
+
+            Hello, World!
+        </div>
+        <div data-role="back-face" data-heading="Lord of the Rings">
+            <span>
+
+                <p>Three Rings for the Elven-kings under the sky,</p>
+                <p>Seven for the Dwarf-lords in their halls of stone,</p>
+                <p>Nine for Mortal Men doomed to die,</p>
+                <p>One for the Dark Lord on his dark throne</p>
+                <p>In the Land of Mordor where the Shadows lie.</p>
+                <p>One Ring to rule them all, One Ring to find them,</p>
+                <p>One Ring to bring them all and in the darkness bind them</p>
+                <p>In the Land of Mordor where the Shadows lie.</p>
+            </span>
+        </div>
+    </zs-flip-card>
+    </div>
+    </div>
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="zeus.widgets" ng-set-html="index.html-2" ng-eval-javascript=""></div>
+</div></div>
+</div>

@@ -1,0 +1,92 @@
+<a href="https://github.com/zeusjs/widgets/edit/master/src/js/zs_text.js" class="improve-docs"><i class="icon-edit"> </i>Improve this doc</a><a href="https://github.com/zeusjs/widgets/blob/926ac8f/src/js/zs_text.js#L80" class="view-source"><i class="icon-eye-open"> </i>View source</a><h1><code ng:non-bindable="">zsText</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">zeus.widgets</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="zeus-widgets-directive-page zeus-widgets-directive-zstext-page"><p>That provides textbox along with label, placholder and custom validation
+capabilities</p>
+<p>#How validation works
+The validator callback is triggered on blur and is passed the current text
+in the underlying text box. The directive interprets the return value
+of this callback using following logic:</p>
+<ul>
+<li>In the simplest case, the validator may return <code>undefined</code> or any falsy
+value. This is intrpreted as validation success.</li>
+<li>If the validator returns a <code>string</code>, it is considered to be a validation
+error and the string is shown as validation error message and <code>isInvalid</code>
+is set to <code>true</code>.</li>
+<li><p>If the validator may also return an <code>object</code> with following properties:</p>
+<ul>
+<li><strong>msg</strong> - <code>string</code> - Validation failure message</li>
+<li><strong>level</strong> - <code>string</code> - This can take values <code>error</code> or <code>warning</code>.
+If level is <code>warning</code>, <code>isInvalid</code> is set to <code>false</code> ( permissible
+error )</li>
+</ul>
+</li>
+<li>Additionally, the validator may also return a <a href="#/api/ng.$q"><code>promise</code></a>.
+This is useful in scenarios where validation is done via XHR.</li>
+<li><p>If validator returns a promise:</p>
+<ul>
+<li>resolves with a <code>string</code>, it is considered to be a validation error. This is
+useful when API user is using <a href="#/api/pascalprecht.translate.$translate">$translate</a>
+that returns a promise.</li>
+<li>resolves with anything other than string, its validation success.</li>
+<li>rejects, the rules( 2 ) and( 3 ) mentioned above are applied with the
+result of rejection</li>
+</ul>
+</li>
+</ul>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;zs-text
+       [validator="{function($val)}"]
+       [placholder="{string}"]
+       [label="{string}"]
+       [show-tick="{boolean}"]
+       [is-invalid="{boolean}"]
+       [zs-model="{string}"]&gt;
+&lt;/zs-text&gt;</pre>
+<h3 id="usage_directive-info">Directive info</h3>
+<div class="directive-info"><ul><li>This directive creates new scope.</li>
+</ul>
+</div>
+<h4 id="usage_directive-info_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>validator <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function($val</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstext-page"><p>Callback function that accepts
+text entered in text box and returns a repsonse indicating validation success
+or failure. Value is passed in as <code>$val</code>.</p>
+</div></td></tr><tr><td>placholder <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstext-page"><p>Placeholder text for the text box</p>
+</div></td></tr><tr><td>label <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstext-page"><p>Label for the text box</p>
+</div></td></tr><tr><td>showTick <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstext-page"><p>controls whether a &#39;tick mark&#39; should be shown inside
+text box on successful validation</p>
+</div></td></tr><tr><td>isInvalid <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstext-page"><p>set to true if validator returns validation error</p>
+</div></td></tr><tr><td>zsModel <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstext-page"><p>two way bound with the value entered in the text box</p>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="zeus-widgets-directive-page zeus-widgets-directive-zstext-page"><h4 id="example_source">Source</h4>
+<div source-edit="zeus.widgets" source-edit-deps="angular.js myCtrl.js" source-edit-html="index.html-6" source-edit-css="" source-edit-js="myCtrl.js" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-6" ng-html-wrap-loaded="zeus.widgets angular.js myCtrl.js"></pre>
+<script type="text/ng-template" id="index.html-6">
+    <div ng-controller="myCtrl">
+        <zs-text validator="validate( $val )" label="My name"
+            placeholder="Give me a name">
+        </zs-text>
+    </div>
+</script>
+</div>
+<div class="tab-pane" title="myCtrl.js">
+<pre class="prettyprint linenums" ng-set-text="myCtrl.js"></pre>
+<script type="text/ng-template" id="myCtrl.js">
+    angular.module( 'zeus.widgets' ).controller( 'myCtrl', function ( $scope ) {
+        $scope.validate = function ( value ) {
+            if ( value !== 'Amey' ) {
+                return 'You entered incorrect name';
+            }
+        };
+    } );
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="zeus.widgets" ng-set-html="index.html-6" ng-eval-javascript="myCtrl.js"></div>
+</div></div>
+</div>

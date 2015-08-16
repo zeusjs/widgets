@@ -1,0 +1,76 @@
+<a href="https://github.com/zeusjs/widgets/edit/master/src/js/zs_simple_toggle.js" class="improve-docs"><i class="icon-edit"> </i>Improve this doc</a><a href="https://github.com/zeusjs/widgets/blob/926ac8f/src/js/zs_simple_toggle.js#L68" class="view-source"><i class="icon-eye-open"> </i>View source</a><h1><code ng:non-bindable="">zsSimpleToggle</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">zeus.widgets</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="zeus-widgets-directive-page zeus-widgets-directive-zssimpletoggle-page"><p>This provides the toggle componant which can be used as checkbox and customize
+with color, click callback etc.</p>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;zs-simple-toggle
+       [text="{string}"]
+       [state="{boolean}"]
+       [lighten="{Number}"]
+       [switch-color="{string}"]
+       [inactive="{boolean}"]
+       [zs-change="{function()}"]&gt;
+&lt;/zs-simple-toggle&gt;</pre>
+<h3 id="usage_directive-info">Directive info</h3>
+<div class="directive-info"><ul><li>This directive creates new scope.</li>
+</ul>
+</div>
+<h4 id="usage_directive-info_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>text <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zssimpletoggle-page"><p>Sets the display text for toggle button.</p>
+</div></td></tr><tr><td>state <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zssimpletoggle-page"><p>Set/get the current state of the toggler. Also can set
+default state to true/false.</p>
+</div></td></tr><tr><td>lighten <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zssimpletoggle-page"><p>Lignten ratio for mouseover background color. Can</p>
+</div></td></tr><tr><td>switch-color <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zssimpletoggle-page"><p>Accept color code and get applied to border, checkmark
+etc</p>
+</div></td></tr><tr><td>inactive <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zssimpletoggle-page"><p>This disables the toggler and hide the border</p>
+</div></td></tr><tr><td>zsChange <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function()</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zssimpletoggle-page"><p>Callback function to handle change event from
+controller.</p>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="zeus-widgets-directive-page zeus-widgets-directive-zssimpletoggle-page"><h4 id="example_source">Source</h4>
+<div source-edit="zeus.widgets" source-edit-deps="angular.js myCtrl.js" source-edit-html="index.html-4" source-edit-css="" source-edit-js="myCtrl.js" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-4" ng-html-wrap-loaded="zeus.widgets angular.js myCtrl.js"></pre>
+<script type="text/ng-template" id="index.html-4">
+    <div ng-controller="myCtrl">
+        <zs-simple-toggle text="{{ toggle.label }}"
+            switch-color="#9c27b0"
+            lighten="50"
+            zs-change="clickMe()"
+            state="toggle.state">
+        </zs-simple-toggle>
+
+        <zs-simple-toggle text="Inactive"
+            switch-color="#12287E"
+            state="true"
+            inactive="true">
+        </zs-simple-toggle>
+
+    </div>
+</script>
+</div>
+<div class="tab-pane" title="myCtrl.js">
+<pre class="prettyprint linenums" ng-set-text="myCtrl.js"></pre>
+<script type="text/ng-template" id="myCtrl.js">
+    angular.module( 'zeus.widgets' ).controller( 'myCtrl', function ( $scope ) {
+
+        $scope.toggle = {
+            label: "Demo Label",
+            state: false
+        };
+
+        $scope.clickMe = function () {
+            alert( 'You clicked Me...!!!' );
+        };
+
+    } );
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="zeus.widgets" ng-set-html="index.html-4" ng-eval-javascript="myCtrl.js"></div>
+</div></div>
+</div>

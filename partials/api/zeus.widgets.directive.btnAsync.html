@@ -1,0 +1,55 @@
+<a href="https://github.com/zeusjs/widgets/edit/master/src/js/btn_async.js" class="improve-docs"><i class="icon-edit"> </i>Improve this doc</a><a href="https://github.com/zeusjs/widgets/blob/926ac8f/src/js/btn_async.js#L52" class="view-source"><i class="icon-eye-open"> </i>View source</a><h1><code ng:non-bindable="">btnAsync</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">zeus.widgets</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="zeus-widgets-directive-page zeus-widgets-directive-btnasync-page"><p>A directive that provides a loading spinner to buttons</p>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as class<pre class="prettyprint linenums">&lt;ANY class="btn-async [indicate-loading: {boolean};]"&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h3 id="usage_directive-info">Directive info</h3>
+<div class="directive-info"><ul><li>This directive creates new scope.</li>
+</ul>
+</div>
+<h4 id="usage_directive-info_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>indicateLoading <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-btnasync-page"><p>A two-way bound boolean that controls
+whether or not the spinner is shown</p>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="zeus-widgets-directive-page zeus-widgets-directive-btnasync-page"><h4 id="example_source">Source</h4>
+<div source-edit="zeus.widgets" source-edit-deps="angular.js myCtrl.js" source-edit-html="index.html" source-edit-css="" source-edit-js="myCtrl.js" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html" ng-html-wrap-loaded="zeus.widgets angular.js myCtrl.js"></pre>
+<script type="text/ng-template" id="index.html">
+    <div ng-controller="myCtrl">
+        <div class="alert alert-warning">
+            Releasing the Kraken takes 5 seconds
+        </div>
+
+        <button class="btn btn-lg btn-danger btn-async"
+            indicate-loading="isLoading" ng-click="releaseKraken()">
+            Release the Kraken!
+        </button>
+    </div>
+</script>
+</div>
+<div class="tab-pane" title="myCtrl.js">
+<pre class="prettyprint linenums" ng-set-text="myCtrl.js"></pre>
+<script type="text/ng-template" id="myCtrl.js">
+    angular.module( 'zeus.widgets' ).controller( 'myCtrl', function ( $scope, $timeout ){
+        $scope.releaseKraken = function () {
+            $scope.isLoading = true;
+
+            $timeout( function () {
+                $scope.isLoading = false;
+            }, 5000 );
+        };
+    } );
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="zeus.widgets" ng-set-html="index.html" ng-eval-javascript="myCtrl.js"></div>
+</div></div>
+</div>

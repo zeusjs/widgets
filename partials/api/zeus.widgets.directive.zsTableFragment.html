@@ -1,0 +1,245 @@
+<a href="https://github.com/zeusjs/widgets/edit/master/src/js/zs_table_fragment.js" class="improve-docs"><i class="icon-edit"> </i>Improve this doc</a><a href="https://github.com/zeusjs/widgets/blob/926ac8f/src/js/zs_table_fragment.js#L243" class="view-source"><i class="icon-eye-open"> </i>View source</a><h1><code ng:non-bindable="">zsTableFragment</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">zeus.widgets</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="zeus-widgets-directive-page zeus-widgets-directive-zstablefragment-page"><p>A directive for abstracting tables and functionality like sorting,
+show/hide columns etc.</p>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;zs-table-fragment
+       [sort-on="{string}"]
+       heading="{string}"
+       [hidecolumn="{boolean}"]
+       [total-records="{number}"]
+       [sort-paginate-handler="{function}"]
+       [is-dragable="{boolean}"]
+       [on-item-drop="{function}"]
+       [display-limit="{number}"]
+       [is-loading-status="{function}"]
+       [header-icon="{string}"]
+       [paginate="{boolean}"]
+       [paginate-marker="{boolean}"]&gt;
+&lt;/zs-table-fragment&gt;</pre>
+<h3 id="usage_directive-info">Directive info</h3>
+<div class="directive-info"><ul><li>This directive creates new scope.</li>
+</ul>
+</div>
+<h4 id="usage_directive-info_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>sortOn <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstablefragment-page"><p>Two way binded keyPath to value on which data
+should be sorted. This can be passed to the <code>sortBy</code> filter along side <code>ngRepeat</code>
+that you will use to render rows</p>
+</div></td></tr><tr><td>heading</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstablefragment-page"><p>A short title given to the table fragment</p>
+</div></td></tr><tr><td>hidecolumn <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstablefragment-page"><p>Controls whether or not to use columns hide functionality</p>
+</div></td></tr><tr><td>totalRecords <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstablefragment-page"><p>Remote - used to show the pagination over the page.</p>
+</div></td></tr><tr><td>sortPaginateHandler <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstablefragment-page"><p>Callback invoke the method which pull the paginated data</p>
+</div></td></tr><tr><td>isDragable <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstablefragment-page"><p>Controls whether rows can be rearraged by dragging</p>
+</div></td></tr><tr><td>onItemDrop <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstablefragment-page"><p>Callback invoked when row is dragged and dropped</p>
+</div></td></tr><tr><td>displayLimit <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstablefragment-page"><p>Number of items to be displayed per page</p>
+</div></td></tr><tr><td>isLoadingStatus <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstablefragment-page"><p>Callback function which should return an promise. This used
+to show the message/loading indicator to user while loading data. This promise should
+be resolved/rejected after fetching data from remote.</p>
+</div></td></tr><tr><td>headerIcon <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstablefragment-page"><p>Specify an image path that want to be displayed before header title.</p>
+</div></td></tr><tr><td>paginate <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstablefragment-page"><p>Remote - Attribute which controls whether pagination should use
+or not. &quot;totalRecords&quot; is mandatory while using paginate.</p>
+</div></td></tr><tr><td>paginateMarker <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="zeus-widgets-directive-page zeus-widgets-directive-zstablefragment-page"><p>Remote - Attribute which shoud used with paginate. This created
+pager component for pagination (i.e. Prev and Next buttons)</p>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="zeus-widgets-directive-page zeus-widgets-directive-zstablefragment-page"><h4 id="example_source">Source</h4>
+<div source-edit="zeus.widgets" source-edit-deps="angular.js myCtrl.js" source-edit-html="index.html-5" source-edit-css="" source-edit-js="myCtrl.js" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-5" ng-html-wrap-loaded="zeus.widgets angular.js myCtrl.js"></pre>
+<script type="text/ng-template" id="index.html-5">
+    <div ng-controller="myCtrl">
+        <zs-table-fragment heading="Client sorting Demo"
+            header-icon="fa-database" sort-on="predicate"
+            hidecolumn="true"
+            display-limit="30">
+            <table class="node-disk-list responsive-table table">
+                <thead>
+                    <th data-sort-key="sr">
+                        Sr. No.
+                    </th>
+                    <th data-sort-key="firstname" sort-default="desc"
+                        data-allowed-hide="false">
+                        First Name
+                    </th>
+                    <th data-sort-key="lastname"
+                        data-allowed-hide="false">
+                        Last Name
+                    </th>
+                    <th data-sort-key="phone">
+                        Phone
+                    </th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="p in person | orderBy:predicate"
+                        ng-class="{'row-danger': d.sr == 5 }">
+                        <td class="extra-attr">
+                            {{ p.sr }}
+                        </td>
+                        <td class="primary-attr">
+                            {{ p.firstname }}
+                        </td>
+                        <td class="extra-attr">
+                            {{ p.lastname }}
+                        </td>
+                        <td class="extra-attr">
+                            {{ p.phone }}
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </zs-table-fragment>
+
+        <zs-table-fragment heading="Remote Sorting and pagination Demo"
+            header-icon="fa-database" sort-on="remotepredicate"
+            hidecolumn="true"
+            total-records="totalRecords"
+            sort-paginate-handler="loadPageList( pageNumber, recordsPerPage, sortParam )"
+            display-limit="5" paginate>
+            <table class="node-disk-list responsive-table table">
+                <thead>
+                    <th data-sort-key="sr" sort-default="asc">
+                        Sr. No.
+                    </th>
+                    <th data-sort-key="firstname"
+                        data-allowed-hide="false">
+                        Fist Name
+                    </th>
+                    <th data-sort-key="lastname"
+                        data-allowed-hide="false">
+                        Last Name
+                    </th>
+                    <th data-sort-key="phone">
+                        Phone
+                    </th>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="p in showList | orderBy:remotepredicate"
+                    ng-class="{'row-danger': d.status == 2 }">
+                        <td class="extra-attr">
+                            {{ p.sr }}
+                        </td>
+                        <td class="primary-attr">
+                            {{ p.firstname }}
+                        </td>
+                        <td class="extra-attr">
+                            {{ p.lastname }}
+                        </td>
+                        <td class="extra-attr">
+                            {{ p.phone }}
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </zs-table-fragment>
+    </div>
+</script>
+</div>
+<div class="tab-pane" title="myCtrl.js">
+<pre class="prettyprint linenums" ng-set-text="myCtrl.js"></pre>
+<script type="text/ng-template" id="myCtrl.js">
+    angular.module( 'zeus.widgets' ).controller( 'myCtrl', function ( $scope, $q, $filter ){
+        var people = [],
+            i;
+        $scope.person = [ {
+            sr: 1,
+            firstname: 'Abc',
+            lastname: 'Cba',
+            phone: '111-111-1111'
+        },
+        {
+            sr: 2,
+            firstname: 'Def',
+            lastname: 'Fed',
+            phone: '222-222-2222'
+        },
+        {
+            sr: 3,
+            firstname: 'Ghi',
+            lastname: 'Ihg',
+            phone: '333-333-3333'
+        },
+        {
+            sr: 4,
+            firstname: 'Jkl',
+            lastname: 'Lkj',
+            phone: '444-444-4444'
+        },
+        {
+            sr: 5,
+            firstname: 'Mno',
+            lastname: 'Onm',
+            phone: '555-555-5555'
+        },
+        {
+            sr: 6,
+            firstname: 'Pqr',
+            lastname: 'Rqp',
+            phone: '666-666-6666'
+        },
+        {
+            sr: 7,
+            firstname: 'Stu',
+            lastname: 'Ust',
+            phone: '555-555-5555'
+        },
+        {
+            sr: 8,
+            firstname: 'Vwx',
+            lastname: 'Xwv',
+            phone: '444-444-4444'
+        },
+        {
+            sr: 9,
+            firstname: 'Yz',
+            lastname: 'Zy',
+            phone: '333-333-3333'
+        }];
+
+        for(i = 0; i < 100; i++ ) {
+            people.push( {
+                sr: i + 1,
+                firstname: 'Abc'+ i,
+                lastname: 'Xyz' + i,
+                phone: '898-898-89' + i
+            } );
+        }
+        $scope.people = people;
+
+        $scope.loadPageList = function ( pageNumber, recordsPerPage, sortParam ) {
+            var lLimit = recordsPerPage * ( pageNumber - 1 ),
+                uLimit = recordsPerPage * pageNumber,
+                data = $scope.people,
+                promise,
+                def;
+
+            def = $q.defer();
+
+            if( sortParam ) {
+                data = $filter( 'orderBy' )( data, sortParam );
+            }
+            // This showList should get assigned from backend api response
+            $scope.showList = data.slice( lLimit, uLimit );
+            console.log( "ShowList-- " );
+            console.log( $scope.showList );
+
+            // totalRecords should also get set by API response
+            $scope.totalRecords = data.length;
+
+            def.resolve();
+            return def.promise;
+        };
+
+    } );
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="zeus.widgets" ng-set-html="index.html-5" ng-eval-javascript="myCtrl.js"></div>
+</div></div>
+</div>
